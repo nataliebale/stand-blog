@@ -1,0 +1,42 @@
+@use 'variables' as variables;
+
+header{
+  padding: 20px 0;
+}
+
+.logo{
+  line-height: 1;
+
+  &_title{
+    font-size: 24px;
+    font-weight: 800;
+  }
+
+  em{
+    color: variables.$color-orange;
+    font-weight: 800;
+    font-size: 44px;
+  }
+}
+
+
+.nav{
+  &_item{
+    display: inline-block;
+    padding: 20px 15px;
+  }
+
+  &_link{
+    padding: 5px;
+    text-decoration: none;
+    color: variables.$color-black;
+    font-weight: 800;
+    font-size: 15px;
+    transition: 0.2s;
+
+    &:hover,
+    &--active{
+      color: variables.$color-orange;
+    }
+  }
+}

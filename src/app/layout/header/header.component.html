@@ -1,0 +1,21 @@
+<header>
+  <div class="container">
+    <div class="d-flex justify-content-between">
+      <div class="logo">
+        <span class="logo_title">
+          {{ 'stand blog' | uppercase }}
+          <em>.</em>
+        </span>
+      </div>
+      <nav class="nav">
+        <ul class="nav_list">
+          <li *ngFor="let item of menuItems" class="nav_item">
+            <a [routerLink]="item?.url" routerLinkActive="nav_link-active" class="nav_link">
+              {{ item?.title | uppercase }}
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>

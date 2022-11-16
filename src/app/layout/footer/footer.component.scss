@@ -1,0 +1,49 @@
+@use 'variables' as variables;
+
+footer{
+  padding: 60px 0;
+  background: variables.$color-dark-blue;
+}
+.socials{
+  &_list{
+    margin-left: 0;
+    padding: 0 20px 60px;
+  }
+
+  &_item{
+    padding: 0 30px;
+    position: relative;
+
+    &:not(:last-child):after{
+      content: '';
+      width: 2px;
+      height: 14px;
+      margin-top: 4px;
+      position: absolute;
+      right: 0px;
+      background: variables.$color-white;
+    }
+  }
+
+  &_link{
+    color: variables.$color-white;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+    transition: 0.2s;
+
+    &:hover{
+      color: variables.$color-orange;
+    }
+  }
+}
+
+.copyright{
+  color: variables.$color-white;
+  font-size: 13px;
+
+  &_logo{
+    color: variables.$color-orange;
+    padding: 0 4px;
+  }
+}

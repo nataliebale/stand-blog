@@ -1,0 +1,15 @@
+<footer>
+  <nav class="socials">
+    <ul class="socials_list d-flex flex-row justify-content-center">
+      <li *ngFor="let social of socials" class="socials_item">
+        <a [href]="social?.url" class="socials_link">
+          {{ social.title | uppercase}}
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="copyright d-flex align-content-center justify-content-center">
+    {{ 'COPYRIGHT 2020 STAND BLOG CO. | DESIGN:' | uppercase}}
+    <span class="copyright_logo">TEMPLATEMO</span>
+  </div>
+</footer>
