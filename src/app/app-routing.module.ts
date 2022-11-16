@@ -17,6 +17,11 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/contact/contact.module').then((m) => m.ContactModule)
   },
+  {
+    path: 'blogs',
+    loadChildren: () =>
+      import('./features/blogs/blogs.module').then((m) => m.BlogsModule)
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' }
 ];
 
