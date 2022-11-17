@@ -9,8 +9,8 @@ import {Banner} from "../../libs/components/banner/entity/banner.interface";
 export class AboutComponent implements OnInit {
 
   banner: Banner = {
-    title: 'ABOUT US',
-    description: "MORE ABOUT US!",
+    title: 'RECENT POSTS',
+    description: "OUR RECENT BLOG ENTRIES",
     image: 'assets/images/heading-bg.jpg'
   }
 

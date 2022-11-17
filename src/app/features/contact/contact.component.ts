@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {Banner} from "../../libs/components/banner/entity/banner.interface";
 
 @Component({
   selector: 'app-contact',
@@ -6,6 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./contact.component.scss']
 })
 export class ContactComponent implements OnInit {
+
+  banner: Banner = {
+    title: 'CONTACT US',
+    description: "LET’S STAY IN TOUCH!",
+    image: 'assets/images/heading-bg.jpg'
+  }
 
   constructor() { }
 

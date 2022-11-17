@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {Ad} from "../../libs/components/ads-block/entity/ad.interface";
+import {Banner} from "../../libs/components/banner/entity/banner.interface";
 
 @Component({
   selector: 'app-blogs',
@@ -7,6 +8,12 @@ import {Ad} from "../../libs/components/ads-block/entity/ad.interface";
   styleUrls: ['./blogs.component.scss']
 })
 export class BlogsComponent implements OnInit {
+
+  banner: Banner = {
+    title: 'ABOUT US',
+    description: "MORE ABOUT US!",
+    image: 'assets/images/heading-bg.jpg'
+  }
 
   public ad: Ad = {
     title: 'Stand Blog HTML5 Template',
