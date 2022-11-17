@@ -1,0 +1,103 @@
+@use 'variables' as variables;
+
+.swiper{
+
+  &_item{
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    padding-top: 82%;
+  }
+
+  &_tag{
+    color: variables.$color-orange;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.25px;
+  }
+
+  &_title{
+    font-size: 24px;
+    font-weight: 900;
+    color: variables.$color-white;
+    letter-spacing: 0.5px;
+    text-transform: capitalize;
+    margin: 10px 0px 12px 0px;
+  }
+
+  &_text{
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 40px;
+    box-sizing: border-box;
+  }
+
+  &_text-footer{
+    color: variables.$color-white;
+
+    span{
+      font-size: 14px;
+      color: variables.$color-white;
+      font-weight: 500;
+      position: relative;
+      padding: 0 20px 0 0;
+
+      &:not(:last-child):after{
+        content: '';
+        width: 2px;
+        height: 14px;
+        margin-top: 4px;
+        position: absolute;
+        right: 10px;
+        background: variables.$color-white;
+      }
+
+      a{
+        transition: all .3s;
+        text-decoration: none;
+        color: variables.$color-white;
+
+        &:hover{
+          color: variables.$color-orange;
+        }
+      }
+    }
+  }
+}
+
+.owl-carousel{
+  position: relative;
+}
+
+.owl-nav{
+  position: absolute;
+  top: 50%;
+  left: 36px;
+  right: 36px;
+  z-index: 11;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.owl-prev,
+.owl-next {
+  width: 60px;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  line-height: 55px;
+  font-size: 22px !important;
+  border-radius: 0 !important;
+  justify-content: center;
+  background: rgba(variables.$color-white, 0.5) !important;
+
+  i {
+    color: variables.$color-white;
+  }
+}

@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { SharedCarouselComponent } from './shared-carousel.component';
+import { SwiperComponent } from './swiper.component';
 
-describe('SharedCarouselComponent', () => {
-  let component: SharedCarouselComponent;
-  let fixture: ComponentFixture<SharedCarouselComponent>;
+describe('SwiperComponent', () => {
+  let component: SwiperComponent;
+  let fixture: ComponentFixture<SwiperComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SharedCarouselComponent ]
+      declarations: [ SwiperComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(SharedCarouselComponent);
+    fixture = TestBed.createComponent(SwiperComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
