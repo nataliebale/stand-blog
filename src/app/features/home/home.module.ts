@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Routes } from "@angular/router";
 
 import { HomeComponent } from "./home.component";
-import {RouterModule, Routes} from "@angular/router";
-import { CarouselComponent } from './carousel/carousel.component';
 import { SwiperModule } from "../../libs/components/swiper/swiper.module";
+import {ComponentsModule} from "../../libs/components/components.module";
 
 const routes: Routes = [
   {
@@ -15,13 +15,13 @@ const routes: Routes = [
 
 @NgModule({
   declarations: [
-    HomeComponent,
-    CarouselComponent
+    HomeComponent
   ],
   imports: [
     CommonModule,
     RouterModule.forChild(routes),
-    SwiperModule
+    SwiperModule,
+    ComponentsModule
   ]
 })
 export class HomeModule { }
