@@ -2,4 +2,27 @@
 
 .ad{
   padding: 40px;
+  background-size: cover;
+
+  &_title{
+    color: variables.$color-orange;
+    font-size: 18px;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+  }
+
+  &_desc{
+    margin-bottom: 0px;
+    margin-top: 12px;
+    color: variables.$color-white;
+    font-size: 26px;
+    font-weight: 900;
+    letter-spacing: 0.25px;
+  }
+
+  &_btn{
+    display: block;
+    margin-top: 18px;
+    height: 44px;
+  }
 }

@@ -10,7 +10,7 @@
       <nav class="nav">
         <ul class="nav_list">
           <li *ngFor="let item of menuItems" class="nav_item">
-            <a [routerLink]="item?.url" routerLinkActive="nav_link-active" class="nav_link">
+            <a [routerLink]="item?.url" routerLinkActive="nav_link--active" class="nav_link">
               {{ item?.title | uppercase }}
             </a>
           </li>

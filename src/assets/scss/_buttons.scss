@@ -1,0 +1,17 @@
+@use 'variables' as variables;
+
+.btn-orange{
+  text-transform: uppercase;
+  color: variables.$color-white;
+  background-color: variables.$color-orange;
+
+  &:hover{
+    background-color: variables.$color-orange;
+    opacity: 0.8;
+    color: variables.$color-white;
+  }
+}
+
+.btn-white{
+  //border: 1px
+}

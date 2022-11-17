@@ -1,9 +1,17 @@
-@use 'reset';
-@use 'fonts';
-@use 'variables';
+
 
 @import '/node_modules/bootstrap/scss/bootstrap';
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
 @import "overrides/bootstrap-container-override";
+@import "overrides/bootstrap-buttons-override";
+
+@import 'reset';
+@import 'fonts';
+@import 'variables';
+@import "buttons";
+
+.mt-100{
+  margin-top: 100px;
+}
