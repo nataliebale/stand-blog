@@ -1,0 +1,23 @@
+@use 'variables' as variables;
+
+.banner{
+  padding: 120px 0;
+  background-size: cover;
+
+  &_title{
+    color: variables.$color-orange;
+    font-size: 18px;
+    text-transform: uppercase;
+    font-weight: 900;
+    letter-spacing: 0.5px;
+    margin-bottom: 15px;
+  }
+
+  &_desc{
+    color: variables.$color-white;
+    font-size: 36px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+}

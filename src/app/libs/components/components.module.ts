@@ -1,17 +1,20 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { AdsBlockComponent } from './ads-block/ads-block.component';
+import { BannerComponent } from './banner/banner.component';
 
 const components = [
-  AdsBlockComponent
+  AdsBlockComponent,
+  BannerComponent
 ]
 
 @NgModule({
   declarations: [
-    ...components
+    ...components,
   ],
   exports: [
-    AdsBlockComponent
+    AdsBlockComponent,
+    BannerComponent
   ],
   imports: [
     CommonModule
