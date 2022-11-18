@@ -8,9 +8,14 @@ indent_size = 2
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.ts]
+[{*.ats,*.cts,*.mts,*.ts}]
 quote_type = single
+ij_typescript_spaces_within_imports = true
 
 [*.md]
 max_line_length = off
 trim_trailing_whitespace = false
+
+
+[{*.cjs,*.js,*.jsx}]
+ij_javascript_spaces_within_imports = true
