@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import {Banner} from "../../libs/components/banner/entity/banner.interface";
-import { FormTitles } from "../../libs/components/form/entity/form.interface";
+import { Banner } from "../../libs/components/banner/entity/banner.interface";
+import { FormTitles, IFormData } from "../../libs/components/form/entity/form.interface";
 
 @Component({
   selector: 'app-contact',
@@ -28,4 +28,7 @@ export class ContactComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  public getFormData(data: IFormData) : void {
+    console.log(data)
+  }
 }

@@ -1,5 +1,5 @@
-import { Component, Input, OnInit } from '@angular/core';
-import { FormTitles } from "./entity/form.interface";
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { FormTitles, IFormData } from "./entity/form.interface";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
@@ -9,10 +9,11 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
 })
 export class FormComponent implements OnInit {
   @Input() formTitles: FormTitles;
+  @Output() formData: EventEmitter<IFormData> = new EventEmitter<IFormData>();
 
   form: FormGroup = new FormGroup({
       name: new FormControl(null, Validators.required),
-      mail: new FormControl(null, [
+      email: new FormControl(null, [
         Validators.required,
         Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')
       ]),
@@ -27,7 +28,7 @@ export class FormComponent implements OnInit {
   }
 
   public onSubmit(): void {
-
+    this.formData.emit(this.form.value);
   }
 
 }

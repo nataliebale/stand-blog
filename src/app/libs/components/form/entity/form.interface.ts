@@ -6,3 +6,10 @@ export interface FormTitles{
   btnTitle: string;
   formTitle: string;
 }
+
+export interface IFormData{
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+}

@@ -3,14 +3,33 @@
 <section class="container mt-100">
   <div class="row">
     <div class="col-9">
-      <app-form [formTitles]="contactFormTitles"></app-form>
+      <app-form [formTitles]="contactFormTitles" (formData)="getFormData($event)"></app-form>
     </div>
     <div class="col-3">
-      test
+      <div class="section-title">
+        {{ 'CONTACT INFORMATION' | uppercase }}
+      </div>
+      <div class="contact_info">
+        <h5>090-484-8080</h5>
+        <p>{{ 'PHONE NUMBER' | uppercase }}</p>
+      </div>
+      <div class="contact_info">
+        <h5>info@company.com</h5>
+        <p>{{ 'EMAIL ADDRESS' | uppercase }}</p>
+      </div>
+      <div class="contact_info">
+        <h5>
+          123 Aenean id posuere dui,
+          Praesent laoreet 10660
+        </h5>
+        <p>{{ 'STREET ADDRESS' | uppercase }}</p>
+      </div>
     </div>
   </div>
 </section>
 
 <section class="container mt-100">
-
+  <div id="contactMap">
+    <iframe src="https://maps.google.com/maps?q=Av.+L%C3%BAcio+Costa,+Rio+de+Janeiro+-+RJ,+Brazil&amp;t=&amp;z=13&amp;ie=UTF8&amp;iwloc=&amp;output=embed" width="100%" height="450px" frameborder="0" style="border:0" allowfullscreen=""></iframe>
+  </div>
 </section>
