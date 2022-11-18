@@ -12,7 +12,10 @@ export class FormComponent implements OnInit {
 
   form: FormGroup = new FormGroup({
       name: new FormControl(null, Validators.required),
-      mail: new FormControl(null, [Validators.required]),
+      mail: new FormControl(null, [
+        Validators.required,
+        Validators.pattern('^[a-z0-9._%+-]+@[a-z0-9.-]+\\.[a-z]{2,4}$')
+      ]),
       subject: new FormControl(null, Validators.required),
       message: new FormControl(null, Validators.required)
     }
