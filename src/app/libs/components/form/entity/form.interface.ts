@@ -4,4 +4,5 @@ export interface FormTitles{
   subjectControlTitle: string;
   textareaControlTitle: string;
   btnTitle: string;
+  formTitle: string;
 }

@@ -6,6 +6,7 @@
 
 @import "overrides/bootstrap-container-override";
 @import "overrides/bootstrap-buttons-override";
+@import "overrides/bootstrap-forms-override";
 
 @import 'reset';
 @import 'fonts';
@@ -14,4 +15,8 @@
 
 .mt-100{
   margin-top: 100px;
+}
+
+.mt-30{
+  margin-top: 30px;
 }
