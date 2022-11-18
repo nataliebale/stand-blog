@@ -10,8 +10,17 @@
   padding: 10px 14px;
   border: 1px solid variables.$color-border-gray;
 
-  &::placeholder{
+  &::placeholder {
     color: rgba(variables.$color-text-gray, 0.9);
+  }
+
+  &.error{
+    border: 1px solid variables.$color-red;
+    color: variables.$color-red;
+
+    &::placeholder{
+      color: variables.$color-red;
+    }
   }
 }
 

@@ -1,13 +1,2 @@
 @use "variables" as variables;
 
-.form{
-  &_title{
-    font-size: 18px;
-    text-transform: uppercase;
-    font-weight: 900;
-    letter-spacing: 0.5px;
-    color: variables.$color-black;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 15px;
-  }
-}
