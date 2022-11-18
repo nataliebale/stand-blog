@@ -1,16 +1,16 @@
 <div class="ad d-flex justify-content-between"
-     [style.backgroundImage]="'url(' + ad?.image + ')'">
+     [style.backgroundImage]="'url(' + ad.image + ')'">
   <div class="ad_text">
     <div class="ad_title">
-      {{ ad?.title }}
+      {{ ad.title }}
     </div>
     <div class="ad_desc">
-      {{ ad?.description }}
+      {{ ad.description }}
     </div>
   </div>
-  <a [href]="ad?.url"
+  <a [href]="ad.url"
      target="_blank"
      class="btn btn-orange ad_btn">
-    {{ ad?.btnText | uppercase }}
+    {{ ad.btnText | uppercase }}
   </a>
 </div>
