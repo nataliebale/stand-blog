@@ -5,7 +5,7 @@ import {RouterModule, Routes} from "@angular/router";
 import {ComponentsModule} from "../../libs/components/components.module";
 import {FormModule} from "../../libs/components/form/form.module";
 
-const routes: Routes = [
+const ROUTES: Routes = [
   {
     path: '',
     component: ContactComponent
@@ -19,7 +19,7 @@ const routes: Routes = [
     imports: [
         CommonModule,
         ComponentsModule,
-        RouterModule.forChild(routes),
+        RouterModule.forChild(ROUTES),
         FormModule
     ]
 })

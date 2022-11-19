@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Banner } from "../../libs/components/banner/entity/banner.interface";
+import { Router } from "@angular/router";
 
 @Component({
   selector: 'app-page-not-found',
@@ -8,9 +9,12 @@ import { Banner } from "../../libs/components/banner/entity/banner.interface";
 })
 export class PageNotFoundComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
 
+  onClick() {
+    this.router.navigate(['/home']);
+  }
 }
