@@ -1,18 +1,22 @@
-
-
 @import '/node_modules/bootstrap/scss/bootstrap';
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.carousel';
 @import '~ngx-owl-carousel-o/lib/styles/scss/owl.theme.default';
 
-@import "overrides/bootstrap-container-override";
-@import "overrides/bootstrap-buttons-override";
-@import "overrides/bootstrap-forms-override";
-@import "overrides/bootstrap-cards-override";
+// vendors-overrides
+@import "vendors-overrides/bootstrap-container-override";
+@import "vendors-overrides/bootstrap-buttons-override";
+@import "vendors-overrides/bootstrap-forms-override";
+@import "vendors-overrides/bootstrap-cards-override";
 
-@import 'reset';
-@import 'fonts';
-@import 'variables';
-@import "buttons";
+// base
+@import 'base/reset';
+@import 'base/fonts';
+
+// abstracts
+@import 'abstracts/variables';
+
+// components
+@import "components/buttons";
 
 .mt-100{
   margin-top: 100px;
