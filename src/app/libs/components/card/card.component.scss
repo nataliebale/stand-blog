@@ -1,0 +1,89 @@
+@use 'variables' as variables;
+
+.card{
+  &_img{
+    background-size: cover;
+    background-position: center;
+    padding-top: 40%;
+  }
+
+  &_content{
+    padding: 40px;
+  }
+
+  &_header-tag{
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 900;
+    color: variables.$color-orange;
+  }
+
+  &_header-title{
+    font-size: 20px;
+    letter-spacing: 0.25px;
+    text-transform: capitalize;
+    font-weight: 900;
+    color: variables.$color-dark-blue;
+    margin: 10px 0px 12px 0px;
+    text-decoration: none;
+  }
+
+  &_info{
+    margin: 0;
+    padding: 0;
+
+    li{
+      display: inline-block;
+      margin-right: 17px;
+      font-size: 14px;
+      color: variables.$color-text-gray;
+      font-weight: 400;
+      position: relative;
+      transition: all .3s;
+
+      &:not(:last-child):after{
+        content: '';
+        width: 1px;
+        height: 14px;
+        margin-top: 4px;
+        position: absolute;
+        right: -10px;
+        background: variables.$color-text-gray;
+      }
+    }
+  }
+
+  &_body{
+    padding: 25px 0px;
+    margin: 25px 0px;
+    border-top: 1px solid variables.$color-border-gray;
+    border-bottom: 1px solid variables.$color-border-gray;
+    font-size: 15px;
+    font-weight: 400;
+    color: variables.$color-text-lightgray;
+    line-height: 30px;
+  }
+
+  &_footer{
+    color: variables.$color-text-gray;
+
+    i{
+      color: variables.$color-orange;
+      margin-right: 5px;
+    }
+
+    a{
+      font-size: 14px;
+      color: variables.$color-text-gray;
+      font-weight: 400;
+      transition: all .3s;
+      margin-left: 6px;
+      text-decoration: none;
+
+      &:not(:last-child):after{
+        content: ','
+      }
+    }
+  }
+}

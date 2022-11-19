@@ -1,21 +1,36 @@
 <div class="card">
-  <div class="card_img"></div>
+  <div class="card_img" [style.backgroundImage]="'url(' + card?.image + ')'"></div>
   <div class="card_content">
     <div class="card_header">
-      <p class="card_header-tag"></p>
+      <p class="card_header-tag">
+        {{ card.tag }}
+      </p>
       <a href="" class="card_header-title">
-        <h4></h4>
+        <h4>
+          {{ card.title }}
+        </h4>
       </a>
-      <ul>
-        <li></li>
-        <li></li>
-        <li></li>
+      <ul class="card_info">
+        <li>
+          {{ card.role }}
+        </li>
+        <li>
+          {{ card.date }}
+        </li>
+        <li>
+          {{ card.numOfComments }} comments
+        </li>
       </ul>
     </div>
-    <div class="card_body"></div>
-    <div class="card_footer d-flex justify-content-between">
-      <span class="card_footer-icon"></span>
-      <a href=""></a>
+    <div class="card_body">
+      {{ card.description }}
+    </div>
+    <div class="card_footer">
+      <span class="card_footer-icon">
+        <i class="fa-solid fa-share-nodes"></i>
+      </span>
+      <a href="">facebook</a>
+      <a href="">twitter</a>
     </div>
   </div>
 </div>

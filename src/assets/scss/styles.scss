@@ -7,6 +7,7 @@
 @import "overrides/bootstrap-container-override";
 @import "overrides/bootstrap-buttons-override";
 @import "overrides/bootstrap-forms-override";
+@import "overrides/bootstrap-cards-override";
 
 @import 'reset';
 @import 'fonts';
@@ -19,6 +20,10 @@
 
 .mt-30{
   margin-top: 30px;
+}
+
+.mb-30{
+  margin-bottom: 30px;
 }
 
 .section-title{
