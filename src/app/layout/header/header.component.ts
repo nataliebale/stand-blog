@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { MenuItem } from "./entity/header.interface";
 
 @Component({
@@ -6,7 +6,7 @@ import { MenuItem } from "./entity/header.interface";
   templateUrl: './header.component.html',
   styleUrls: ['./header.component.scss']
 })
-export class HeaderComponent implements OnInit {
+export class HeaderComponent {
 
   menuItems: MenuItem[] = [
     {
@@ -28,8 +28,5 @@ export class HeaderComponent implements OnInit {
   ]
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

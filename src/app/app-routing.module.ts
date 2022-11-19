@@ -22,7 +22,13 @@ const routes: Routes = [
     loadChildren: () =>
       import('./features/blogs/blogs.module').then((m) => m.BlogsModule)
   },
-  { path: '', redirectTo: 'home', pathMatch: 'full' }
+  {
+    path: 'not-found',
+    loadChildren: () =>
+      import('./features/page-not-found/page-not-found.module').then((m) => m.PageNotFoundModule)
+  },
+  { path: '', redirectTo: 'home', pathMatch: 'full' },
+  { path: '**', redirectTo: 'not-found'}
 ];
 
 @NgModule({
