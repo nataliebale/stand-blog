@@ -22,7 +22,8 @@
         </li>
       </ul>
     </div>
-    <div class="card_body">
+    <div class="card_description"
+         [class.card_description--full]="card.showFullDescription">
       {{ card.description }}
     </div>
     <div class="card_footer">

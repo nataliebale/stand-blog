@@ -6,4 +6,5 @@ export interface ICard{
   date: string;
   numOfComments: number;
   description: string;
+  showFullDescription?: boolean;
 }

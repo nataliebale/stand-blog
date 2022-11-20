@@ -54,18 +54,21 @@
     }
   }
 
-  &_body{
-    padding: 25px 0px;
-    margin: 25px 0px;
+  &_description{
+    padding: 25px 0 0;
+    margin: 25px 0;
     border-top: 1px solid variables.$color-border-gray;
-    border-bottom: 1px solid variables.$color-border-gray;
     font-size: 15px;
     font-weight: 400;
     color: variables.$color-text-lightgray;
     line-height: 30px;
+    height: 112px;
+    overflow: hidden;
   }
 
   &_footer{
+    padding-top: 25px;
+    border-top: 1px solid variables.$color-border-gray;
     color: variables.$color-text-gray;
 
     i{
