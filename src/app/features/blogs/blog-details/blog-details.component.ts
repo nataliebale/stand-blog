@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Banner } from "../../../libs/components/banner/entity/banner.interface";
 import { Ad } from "../../../libs/components/ads-block/entity/ad.interface";
+import { ActivatedRoute } from "@angular/router";
 
 @Component({
   selector: 'app-blog-details',
@@ -22,10 +23,19 @@ export class BlogDetailsComponent implements OnInit {
     image: 'assets/images/cta-bg.jpg',
     btnText: 'download now!'
   }
+  private itemId: string | null;
 
-  constructor() { }
+  constructor(private route: ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.route.paramMap.subscribe(params => {
+      this.itemId = params.get('id');
+      this.getBlogById();
+    })
+  }
+
+  getBlogById(){
+
   }
 
 }
