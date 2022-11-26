@@ -4,8 +4,8 @@ import { RouterModule, Routes } from "@angular/router";
 
 import { HomeComponent } from "./home.component";
 import { SwiperModule } from "../../libs/components/swiper/swiper.module";
-import {ComponentsModule} from "../../libs/components/components.module";
-import {CardModule} from "../../libs/components/card/card.module";
+import { ComponentsModule} from "../../libs/components/components.module";
+import { CardModule } from "../../libs/components/card/card.module";
 import { FiltersModule } from "../../libs/components/filters/filters.module";
 
 const ROUTES: Routes = [

@@ -51,4 +51,8 @@ export class HomeComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  onSearch(value: string): void {
+    console.log(value);
+  }
+
 }
