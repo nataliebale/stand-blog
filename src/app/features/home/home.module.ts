@@ -6,6 +6,7 @@ import { HomeComponent } from "./home.component";
 import { SwiperModule } from "../../libs/components/swiper/swiper.module";
 import {ComponentsModule} from "../../libs/components/components.module";
 import {CardModule} from "../../libs/components/card/card.module";
+import { FiltersModule } from "../../libs/components/filters/filters.module";
 
 const ROUTES: Routes = [
   {
@@ -21,6 +22,7 @@ const ROUTES: Routes = [
     imports: [
         CommonModule,
         RouterModule.forChild(ROUTES),
+        FiltersModule,
         SwiperModule,
         ComponentsModule,
         CardModule
