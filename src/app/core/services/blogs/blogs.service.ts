@@ -1,12 +1,13 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { Observable } from "rxjs";
+import { ICard } from "../../../libs/components/card/entity/card.interface";
 
 @Injectable({
   providedIn: 'root'
 })
 export class BlogsService {
-  private _jsonURL = 'src/api/data.json';
+  private blogsUrl = 'api/data.json';
 
   constructor(private http: HttpClient) {
     this.getJSON().subscribe(data => {
@@ -14,6 +15,6 @@ export class BlogsService {
     });
   }
   public getJSON(): Observable<any> {
-    return this.http.get(this._jsonURL);
+    return this.http.get<ICard[]>(this.blogsUrl);
   }
 }
