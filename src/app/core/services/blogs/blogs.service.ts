@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { catchError, Observable, tap } from "rxjs";
+import { catchError, Observable, tap, throwError } from "rxjs";
 import { ICard } from "../../../libs/components/card/entity/card.interface";
 
 @Injectable({
@@ -28,5 +28,6 @@ export class BlogsService {
     } else {
       errorMessage = `Server returned code: ${err.status}, error message is: ${err.message}`;
     }
+    return throwError(() => errorMessage );
   }
 }
