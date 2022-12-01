@@ -27,5 +27,66 @@
       "numOfComments": 12,
       "description": "Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you."
     }
-  ]
+  ],
+  "popularPosts": [
+    {
+      "image": "assets/images/banner-item-01.jpg",
+      "tag": "nature",
+      "title": "Aenean pulvinar gravida sem nec",
+      "role": "Admin",
+      "date": "May 12, 2020",
+      "numOfComments": 12,
+      "description": "Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you."
+    },
+    {
+      "image": "assets/images/banner-item-02.jpg",
+      "tag": "lifestyle",
+      "title": "Aenean pulvinar gravida sem nec",
+      "role": "Admin",
+      "date": "May 12, 2020",
+      "numOfComments": 12,
+      "description": "Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you."
+    },
+    {
+      "image": "assets/images/banner-item-03.jpg",
+      "tag": "lifestyle",
+      "title": "Aenean pulvinar gravida sem nec",
+      "role": "Admin",
+      "date": "May 12, 2020",
+      "numOfComments": 12,
+      "description": "Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you."
+    }
+  ],
+  "tags": [
+    {
+      "name": "Lifestyle"
+    },
+    {
+      "name": "Creative"
+    },
+    {
+      "name": "PSD"
+    },
+    {
+      "name": "Style"
+    },
+    {
+      "name": "Design"
+    },
+    {
+      "name": "Responsive"
+    }
+  ],
+  "about": {
+    "image": "assets/images/about-us.jpg",
+    "title": "Two-One Donec porttitor augue",
+    "description": "Please tell your friends about TemplateMo website. Thank you. You can browse through different categories of templates such as business, portfolio, restaurant, etc. Pellentesque quis luctus libero. Maecenas pretium molestie erat, ac tincidunt leo gravida ac. Cras ullamcorper eu ipsum eu sollicitudin. Fusce vitae commodo turpis. Integer ullamcorper purus nec justo mollis fermentum. Nunc imperdiet erat nec lacinia laoreet. Maecenas faucibus ullamcorper felis vitae finibus. Nullam at quam ut lacus aliquam tempor vel sed ipsum. Donec pellentesque tincidunt imperdiet. Mauris sit amet justo vulputate, cursus massa congue, vestibulum odio. Aenean elit nunc, gravida in erat sit amet, feugiat viverra leo. Phasellus interdum, diam commodo egestas rhoncus, turpis nisi consectetur nibh, in vehicula eros orci vel neque."
+  },
+  "banner": {
+    "title": "Stand Blog HTML5 Template",
+    "description": "Creative HTML Template For Bloggers!",
+    "url": "https://templatemo.com/tm-551-stand-blog",
+    "image": "assets/images/cta-bg.jpg",
+    "btnText": "download now!"
+  }
 }

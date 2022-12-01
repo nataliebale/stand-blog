@@ -1,4 +1,6 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ITag } from "./entity/tag.interface";
+import { ICategory } from "./entity/category.interface";
 
 @Component({
   selector: 'app-filters',
@@ -6,6 +8,8 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
   styleUrls: ['./filters.component.scss']
 })
 export class FiltersComponent implements OnInit {
+  @Input() tags: ITag[];
+  @Input() categories: ICategory[];
   @Output() searchEmit: EventEmitter<string> = new EventEmitter<string>();
 
   constructor() { }

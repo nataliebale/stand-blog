@@ -7,33 +7,16 @@
              placeholder="TYPE TO SEARCH">
     </div>
   </form>
+
   <div class="section-title mt-30">
     {{ 'categories' | uppercase }}
   </div>
+
   <ul class="categories">
-    <li class="categories_item">
-      <a href="">
-        Nature Lifestyle
-      </a>
-    </li>
-    <li class="categories_item">
-      <a href="">
-        Responsive Templates
-      </a>
-    </li>
-    <li class="categories_item">
-      <a href="">
-        Awesome Layouts
-      </a>
-    </li>
-    <li class="categories_item">
-      <a href="">
-        Responsive Templates
-      </a>
-    </li>
-    <li class="categories_item">
-      <a href="">
-        Nature Lifestyle
+    <li *ngFor="let category of categories"
+      class="categories_item">
+      <a>
+        {{ category.title }}
       </a>
     </li>
   </ul>
@@ -43,23 +26,9 @@
   </div>
 
   <div class="filter-tags mt-30">
-    <button class="btn btn-white">
-      Lifestyle
-    </button>
-    <button class="btn btn-white">
-      Creative
-    </button>
-    <button class="btn btn-white">
-      HTML5
-    </button>
-    <button class="btn btn-white">
-      PSD
-    </button>
-    <button class="btn btn-white">
-      Responsive
-    </button>
-    <button class="btn btn-white">
-      Lifestyle
+    <button *ngFor="let tag of tags"
+            class="btn btn-white">
+      {{ tag.title }}
     </button>
   </div>
 </div>
