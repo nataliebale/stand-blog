@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {Banner} from "../../libs/components/banner/entity/banner.interface";
+import { AboutService } from "../../core/services/about/about.service";
+import { IAbout } from "./entity/about.interface";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-about',
@@ -7,6 +10,7 @@ import {Banner} from "../../libs/components/banner/entity/banner.interface";
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
+  public aboutData: Observable<IAbout> = this.aboutService.getAbout();
 
   banner: Banner = {
     title: 'RECENT POSTS',
@@ -14,7 +18,7 @@ export class AboutComponent implements OnInit {
     image: 'assets/images/heading-bg.jpg'
   }
 
-  constructor() { }
+  constructor(private aboutService: AboutService) { }
 
   ngOnInit(): void {
   }
