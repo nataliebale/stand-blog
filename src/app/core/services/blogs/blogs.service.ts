@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from "@angular/common/http";
-import { catchError, map, Observable, tap, throwError } from "rxjs";
+import { HttpClient } from "@angular/common/http";
+import { map, Observable, shareReplay } from "rxjs";
 import { ICard } from "../../../libs/components/card/entity/card.interface";
 
 @Injectable({
@@ -13,7 +13,8 @@ export class BlogsService {
 
   public getBlogs(): Observable<ICard[]> {
     return this.http.get<any>(this.blogsUrl).pipe(
-      map((data) => data?.posts)
+      map((data) => data?.posts),
+      shareReplay(1)
     );
   }
 }
