@@ -8,6 +8,7 @@ import { ICard } from "./entity/card.interface";
 })
 export class CardComponent implements OnInit {
   @Input() card: ICard; // TODO: refactor
+  @Input() showInDetail: boolean = false;
 
   constructor() { }
 

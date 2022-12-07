@@ -54,6 +54,15 @@
     }
   }
 
+  &_checkbox{
+
+    label {
+      color: variables.$color-text-lightgray;
+      font-size: 15px;
+      font-weight: 400;
+    }
+  }
+
   &_description{
     padding: 25px 0 0;
     margin: 25px 0;
@@ -64,6 +73,10 @@
     line-height: 30px;
     height: 112px;
     overflow: hidden;
+
+    &--full{
+      height: auto;
+    }
   }
 
   &_footer{
