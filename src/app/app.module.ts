@@ -7,6 +7,8 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from "./layout/header/header.component";
 import { FooterComponent } from "./layout/footer/footer.component";
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
+import { environment } from '../environments/environment';
 
 @NgModule({
   imports: [
@@ -14,6 +16,7 @@ import { StoreModule } from '@ngrx/store';
     BrowserAnimationsModule,
     AppRoutingModule,
     StoreModule.forRoot({}, {}),
+    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
   ],
   declarations: [
     AppComponent,

@@ -26,13 +26,21 @@
     <div *ngIf="showInDetail"
          class="form-group form-check card_checkbox mt-30">
       <input type="checkbox"
-             
+             (change)="onCheckChange()"
+             [checked]="displayFullText"
              class="form-check-input"
              id="inDetail">
-      <label class="form-check-label" for="inDetail">Show description in detail</label>
+      <label class="form-check-label" for="inDetail">
+        <ng-container *ngIf="displayFullText">
+          Show less text
+        </ng-container>
+        <ng-container *ngIf="!displayFullText">
+          Show more text
+        </ng-container>
+      </label>
     </div>
     <div class="card_description"
-         [class.card_description--full]="showInDetail">
+         [class.card_description--full]="displayFullText">
       {{ card.description }}
     </div>
     <div class="card_footer">

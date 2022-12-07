@@ -1,10 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import {Ad} from "../../libs/components/ads-block/entity/ad.interface";
-import {Banner} from "../../libs/components/banner/entity/banner.interface";
+import { Ad } from "../../libs/components/ads-block/entity/ad.interface";
+import { Banner } from "../../libs/components/banner/entity/banner.interface";
 import { ICard } from "../../libs/components/card/entity/card.interface";
 import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { Observable } from "rxjs";
-import { Store } from "@ngrx/store";
 
 @Component({
   selector: 'app-blogs',
@@ -29,8 +28,7 @@ export class BlogsComponent implements OnInit {
 
   public cards$: Observable<ICard[]> = this.blogsService.getBlogs$();
 
-  constructor(private blogsService: BlogsService,
-              private store: Store<any>) { }
+  constructor(private blogsService: BlogsService) { }
 
   ngOnInit(): void {
   }

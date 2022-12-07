@@ -8,7 +8,7 @@ import { CardModule } from "../../libs/components/card/card.module";
 import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { HttpClientModule } from "@angular/common/http";
 import { StoreModule } from "@ngrx/store";
-import { blogsReducer } from "./store/reducers/blogs.reducer";
+import { blogsReducer } from "../../core/store/blogs/reducers/blogs.reducer";
 
 
 @NgModule({
@@ -21,7 +21,6 @@ import { blogsReducer } from "./store/reducers/blogs.reducer";
     CardModule,
     BlogsRoutingModule,
     HttpClientModule,
-    StoreModule.forFeature('blogs', blogsReducer)
   ],
   providers: [ BlogsService ]
 })
