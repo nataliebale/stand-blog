@@ -11,7 +11,7 @@ export class AboutService {
 
   constructor(private http: HttpClient) {}
 
-  public getAbout(): Observable<IAbout> {
+  public getAbout$(): Observable<IAbout> {
     return this.http.get<any>(this.blogsUrl).pipe(
       tap((data) => console.log(1111, data?.about)),
       map((data) => data?.about)

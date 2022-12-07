@@ -11,7 +11,7 @@ export class BlogsService {
 
   constructor(private http: HttpClient) {}
 
-  public getBlogs(): Observable<ICard[]> {
+  public getBlogs$(): Observable<ICard[]> {
     return this.http.get<any>(this.blogsUrl).pipe(
       map((data) => data?.posts),
       shareReplay(1)

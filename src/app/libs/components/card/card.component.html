@@ -5,7 +5,9 @@
       <p class="card_header-tag">
         {{ card.tag }}
       </p>
-      <a href="" class="card_header-title">
+      <a class="card_header-title"
+         [routerLink]="[card.id]"
+         queryParamsHandling="merge">
         <h4>
           {{ card.title }}
         </h4>

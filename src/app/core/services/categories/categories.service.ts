@@ -11,7 +11,7 @@ export class CategoriesService {
 
   constructor(private http: HttpClient) {}
 
-  public getCategories(): Observable<ICard[]> {
+  public getCategories$(): Observable<ICard[]> {
     return this.http.get<any>(this.blogsUrl).pipe(
       map((data) => data?.categories)
     );

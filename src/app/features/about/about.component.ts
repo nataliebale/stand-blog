@@ -10,7 +10,7 @@ import { Observable } from "rxjs";
   styleUrls: ['./about.component.scss']
 })
 export class AboutComponent implements OnInit {
-  public aboutData: Observable<IAbout> = this.aboutService.getAbout();
+  public aboutData$: Observable<IAbout> = this.aboutService.getAbout$();
 
   banner: Banner = {
     title: 'RECENT POSTS',

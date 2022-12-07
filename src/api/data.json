@@ -1,6 +1,7 @@
 {
   "posts": [
     {
+      "id": 1,
       "image": "assets/images/banner-item-01.jpg",
       "tag": "nature",
       "title": "Aenean pulvinar gravida sem nec",
@@ -10,6 +11,7 @@
       "description": "Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you."
     },
     {
+      "id": 2,
       "image": "assets/images/banner-item-02.jpg",
       "tag": "lifestyle",
       "title": "Aenean pulvinar gravida sem nec",
@@ -19,6 +21,7 @@
       "description": "Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you."
     },
     {
+      "id": 3,
       "image": "assets/images/banner-item-03.jpg",
       "tag": "lifestyle",
       "title": "Aenean pulvinar gravida sem nec",
@@ -30,6 +33,7 @@
   ],
   "popularPosts": [
     {
+      "id": 1,
       "image": "assets/images/banner-item-01.jpg",
       "tag": "nature",
       "title": "Aenean pulvinar gravida sem nec",
@@ -39,6 +43,7 @@
       "description": "Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you."
     },
     {
+      "id": 2,
       "image": "assets/images/banner-item-02.jpg",
       "tag": "lifestyle",
       "title": "Aenean pulvinar gravida sem nec",
@@ -48,6 +53,7 @@
       "description": "Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you."
     },
     {
+      "id": 3,
       "image": "assets/images/banner-item-03.jpg",
       "tag": "lifestyle",
       "title": "Aenean pulvinar gravida sem nec",

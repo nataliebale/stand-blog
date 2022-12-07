@@ -17,7 +17,7 @@ export class HomeComponent implements OnInit {
     image: 'assets/images/cta-bg.jpg',
     btnText: 'download now!'
   }
-  public cards: Observable<ICard[]> = this.blogsService.getBlogs();
+  public cards$: Observable<ICard[]> = this.blogsService.getBlogs$();
 
   constructor(private blogsService: BlogsService) { }
 

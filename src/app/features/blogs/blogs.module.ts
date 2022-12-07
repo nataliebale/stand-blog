@@ -5,6 +5,8 @@ import { BlogsRoutingModule } from './blogs-routing.module';
 import { BlogsComponent } from './blogs.component';
 import { ComponentsModule } from "../../libs/components/components.module";
 import { CardModule } from "../../libs/components/card/card.module";
+import { BlogsService } from "../../core/services/blogs/blogs.service";
+import { HttpClientModule } from "@angular/common/http";
 
 
 @NgModule({
@@ -16,6 +18,8 @@ import { CardModule } from "../../libs/components/card/card.module";
     ComponentsModule,
     CardModule,
     BlogsRoutingModule,
-  ]
+    HttpClientModule
+  ],
+  providers: [ BlogsService ]
 })
 export class BlogsModule { }

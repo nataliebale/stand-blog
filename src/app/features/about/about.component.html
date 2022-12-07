@@ -1,20 +1,21 @@
 <app-banner [banner]="banner"></app-banner>
 
 <section class="container mt-100">
-
-  <div class="about_image">
-    <img [src]='(aboutData | async)?.image' alt="">
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="text-center about_text">
-        <h4>
-          {{ (aboutData | async)?.title }}
-        </h4>
-        {{ (aboutData | async)?.description }}
+  <ng-container *ngIf="aboutData$ | async as aboutData">
+    <div class="about_image">
+      <img [src]='aboutData?.image' alt="">
+    </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="text-center about_text">
+          <h4>
+            {{ aboutData?.title }}
+          </h4>
+          {{ aboutData?.description }}
+        </div>
       </div>
     </div>
-  </div>
+  </ng-container>
 </section>
 
 <section class="container">
