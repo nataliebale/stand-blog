@@ -6,8 +6,7 @@
         {{ card.tag }}
       </p>
       <a class="card_header-title"
-         [routerLink]="[card.id]"
-         queryParamsHandling="merge">
+         [routerLink]="['/blogs', card.id]">
         <h4>
           {{ card.title }}
         </h4>
