@@ -1,5 +1,6 @@
 import { createAction, createReducer, on } from "@ngrx/store";
 import { IBlogsState } from "../entity/blogs.interface";
+import { showInDetailAction } from "../actions/blogs.action";
 
 const initialState: IBlogsState = {
   showInDetail: true
@@ -7,7 +8,7 @@ const initialState: IBlogsState = {
 
 export const blogsReducer = createReducer<IBlogsState>(
   initialState,
-  on(createAction('[Blogs] show in detail'), (state): IBlogsState => {
+  on(showInDetailAction, (state): IBlogsState => {
     return {
       ...state,
       showInDetail: !state.showInDetail

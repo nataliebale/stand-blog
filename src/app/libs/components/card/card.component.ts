@@ -3,6 +3,7 @@ import { ICard } from "./entity/card.interface";
 import { Store } from "@ngrx/store";
 import { IAppState } from "../../../core/store/blogs/entity/blogs.interface";
 import { getShowInDetail } from "../../../core/store/blogs/selectors/blogs.selector";
+import { showInDetailAction } from "../../../core/store/blogs/actions/blogs.action";
 
 @Component({
   selector: 'app-card',
@@ -23,10 +24,7 @@ export class CardComponent implements OnInit {
   }
 
   onCheckChange(): void {
-    this.store.dispatch(
-      { type: '[Blogs] show in detail'}
-    )
-    this.displayFullText = !this.displayFullText
+    this.store.dispatch(showInDetailAction());
   }
 
 }
