@@ -1,6 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { ICard } from "./entity/card.interface";
 import { Store } from "@ngrx/store";
+import { IAppState } from "../../../core/store/blogs/entity/blogs.interface";
 
 @Component({
   selector: 'app-card',
@@ -12,15 +13,12 @@ export class CardComponent implements OnInit {
   @Input() showInDetail: boolean = false;
   displayFullText: boolean;
 
-  constructor(private store: Store<any>) { }
+  constructor(private store: Store<IAppState>) { }
 
   ngOnInit(): void {
     this.store.select('blogs').subscribe(
       blogs => {
-        if (blogs) {
-          this.displayFullText = blogs.showInDetail;
-          console.log(222222222, this.displayFullText);
-        }
+        this.displayFullText = blogs.showInDetail;
       }
     )
   }

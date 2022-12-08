@@ -16,7 +16,10 @@ import { environment } from '../environments/environment';
     BrowserAnimationsModule,
     AppRoutingModule,
     StoreModule.forRoot({}, {}),
-    StoreDevtoolsModule.instrument({ maxAge: 25, logOnly: environment.production }),
+    StoreDevtoolsModule.instrument({
+      name: 'Stand Blog App Devtools',
+      maxAge: 25,
+      logOnly: environment.production }),
   ],
   declarations: [
     AppComponent,
