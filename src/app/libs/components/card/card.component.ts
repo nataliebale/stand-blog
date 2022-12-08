@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { ICard } from "./entity/card.interface";
 import { Store } from "@ngrx/store";
 import { IAppState } from "../../../core/store/blogs/entity/blogs.interface";
+import { getShowInDetail } from "../../../core/store/blogs/selectors/blogs.selector";
 
 @Component({
   selector: 'app-card',
@@ -16,10 +17,8 @@ export class CardComponent implements OnInit {
   constructor(private store: Store<IAppState>) { }
 
   ngOnInit(): void {
-    this.store.select('blogs').subscribe(
-      blogs => {
-        this.displayFullText = blogs.showInDetail;
-      }
+    this.store.select(getShowInDetail).subscribe(
+      state => this.displayFullText = state
     )
   }
 
