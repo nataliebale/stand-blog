@@ -4,7 +4,8 @@ import * as BlogsActions from "../actions/blogs.action";
 
 const initialState: IBlogsState = {
   showInDetail: true,
-  popularBlog: null
+  popularBlog: null,
+  blogs: null
 }
 
 export const blogsReducer = createReducer<IBlogsState>(
@@ -21,6 +22,12 @@ export const blogsReducer = createReducer<IBlogsState>(
     return {
       ...state,
       popularBlog: popularBlogId
+    }
+  }),
+  on(BlogsActions.loadBlogsSuccess, (state, action): IBlogsState => {
+    return {
+      ...state,
+      blogs: action.blogs
     }
   })
 );

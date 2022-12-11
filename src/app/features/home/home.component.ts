@@ -3,6 +3,11 @@ import {Ad} from "../../libs/components/ads-block/entity/ad.interface";
 import { ICard } from "../../libs/components/card/entity/card.interface";
 import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { Observable } from "rxjs";
+import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
+import { Store } from "@ngrx/store";
+import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
+import { getBlogs } from "../../core/store/blogs/selectors/blogs.selector";
+
 
 @Component({
   selector: 'app-home',
@@ -17,11 +22,14 @@ export class HomeComponent implements OnInit {
     image: 'assets/images/cta-bg.jpg',
     btnText: 'download now!'
   }
-  public cards$: Observable<ICard[]> = this.blogsService.getBlogs$();
+  public cards$: Observable<ICard[] | null> = this.store.select(getBlogs);
 
-  constructor(private blogsService: BlogsService) { }
+  constructor(private blogsService: BlogsService,
+              private store: Store<IBlogsState>) { }
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    this.store.dispatch(BlogsActions.loadBlogs())
+  }
 
   onSearch(value: string): void {
     console.log(value);

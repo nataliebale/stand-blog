@@ -4,6 +4,10 @@ import { Banner } from "../../libs/components/banner/entity/banner.interface";
 import { ICard } from "../../libs/components/card/entity/card.interface";
 import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { Observable } from "rxjs";
+import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
+import { Store } from "@ngrx/store";
+import { getBlogs } from "../../core/store/blogs/selectors/blogs.selector";
+import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 
 @Component({
   selector: 'app-blogs',
@@ -26,11 +30,13 @@ export class BlogsComponent implements OnInit {
     btnText: 'download now!'
   }
 
-  public cards$: Observable<ICard[]> = this.blogsService.getBlogs$();
+  public cards$: Observable<ICard[] | null> = this.store.select(getBlogs);
 
-  constructor(private blogsService: BlogsService) { }
+  constructor(private blogsService: BlogsService,
+              private store: Store<IBlogsState>) { }
 
   ngOnInit(): void {
+    this.store.dispatch(BlogsActions.loadBlogs())
   }
 
 }

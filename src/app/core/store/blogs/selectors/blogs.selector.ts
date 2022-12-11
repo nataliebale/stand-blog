@@ -12,3 +12,8 @@ export const getPopularBlog = createSelector(
   getBlogsFeatureState,
   state => state.popularBlog
 );
+
+export const getBlogs = createSelector(
+  getBlogsFeatureState,
+  state => state.blogs
+)
