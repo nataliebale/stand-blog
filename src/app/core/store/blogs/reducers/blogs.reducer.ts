@@ -1,17 +1,26 @@
-import { createAction, createReducer, on } from "@ngrx/store";
+import { createReducer, on } from "@ngrx/store";
 import { IBlogsState } from "../entity/blogs.interface";
-import { showInDetailAction } from "../actions/blogs.action";
+import * as BlogsActions from "../actions/blogs.action";
 
 const initialState: IBlogsState = {
-  showInDetail: true
+  showInDetail: true,
+  popularBlog: null
 }
 
 export const blogsReducer = createReducer<IBlogsState>(
   initialState,
-  on(showInDetailAction, (state): IBlogsState => {
+  on(BlogsActions.showInDetailAction, (state): IBlogsState => {
     return {
       ...state,
       showInDetail: !state.showInDetail
+    }
+  }),
+  on(BlogsActions.setPopularBlog, (state, action): IBlogsState => {
+    let popularBlogId: number | null = action.popularBlog;
+    if(state.popularBlog === action.popularBlog) popularBlogId = null;
+    return {
+      ...state,
+      popularBlog: popularBlogId
     }
   })
 );

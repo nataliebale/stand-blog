@@ -54,6 +54,14 @@
     }
   }
 
+  &_btn--popular{
+    font-size: 20px;
+    cursor: pointer;
+    &.active{
+      color: variables.$color-orange;
+    }
+  }
+
   &_checkbox{
 
     label {

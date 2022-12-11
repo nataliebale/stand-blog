@@ -5,5 +5,10 @@ const getBlogsFeatureState = createFeatureSelector<IBlogsState>('blogs');
 
 export const getShowInDetail = createSelector(
   getBlogsFeatureState,
-    state => state.showInDetail
+  state => state.showInDetail
+);
+
+export const getPopularBlog = createSelector(
+  getBlogsFeatureState,
+  state => state.popularBlog
 );

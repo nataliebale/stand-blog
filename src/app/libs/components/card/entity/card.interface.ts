@@ -8,4 +8,5 @@ export interface ICard{
   numOfComments: number;
   description: string;
   showFullDescription?: boolean;
+  isPopular?: boolean;
 }
