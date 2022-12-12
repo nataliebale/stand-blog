@@ -5,6 +5,7 @@ export interface IBlogsState{
   showInDetail: boolean;
   popularBlog: number | null;
   blogs: ICard[] | null;
+  error: string;
 }
 
 export interface IAppState extends AppState.IAppState{

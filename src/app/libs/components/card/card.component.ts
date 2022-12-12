@@ -19,10 +19,12 @@ export class CardComponent implements OnInit {
   constructor(private store: Store<IAppState>) { }
 
   ngOnInit(): void {
+    // TODO: unsubscribe
     this.store.select(getShowInDetail).subscribe(
       state => this.displayFullText = state
     )
 
+    // TODO: unsubscribe
     this.store.select(getPopularBlog).subscribe(
       state => this.isPopular = (state === this.card.id)
     )

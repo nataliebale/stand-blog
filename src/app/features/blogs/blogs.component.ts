@@ -6,7 +6,7 @@ import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { Observable } from "rxjs";
 import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
 import { Store } from "@ngrx/store";
-import { getBlogs } from "../../core/store/blogs/selectors/blogs.selector";
+import { getBlogs, getError } from "../../core/store/blogs/selectors/blogs.selector";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 
 @Component({
@@ -31,6 +31,8 @@ export class BlogsComponent implements OnInit {
   }
 
   public cards$: Observable<ICard[] | null> = this.store.select(getBlogs);
+
+  public cardsError$: Observable<string> = this.store.select(getError);
 
   constructor(private blogsService: BlogsService,
               private store: Store<IBlogsState>) { }

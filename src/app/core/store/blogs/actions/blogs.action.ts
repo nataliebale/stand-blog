@@ -18,5 +18,6 @@ export const loadBlogsSuccess = createAction(
 )
 
 export const loadBlogsError = createAction(
-  '[Blogs] load blogs error'
+  '[Blogs] load blogs error',
+  props<{ error: string}>()
 )

@@ -11,6 +11,9 @@
         <div *ngFor="let card of cards$ | async" class="mb-30 col-6">
           <app-card [card]="card"></app-card>
         </div>
+        <div class="mb-30 col-6 text-center" *ngIf="cardsError$ | async as error">
+          {{ error }}
+        </div>
       </div>
     </div>
     <div class="col-3">

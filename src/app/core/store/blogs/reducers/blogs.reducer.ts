@@ -5,7 +5,8 @@ import * as BlogsActions from "../actions/blogs.action";
 const initialState: IBlogsState = {
   showInDetail: true,
   popularBlog: null,
-  blogs: null
+  blogs: null,
+  error: ''
 }
 
 export const blogsReducer = createReducer<IBlogsState>(
@@ -28,6 +29,13 @@ export const blogsReducer = createReducer<IBlogsState>(
     return {
       ...state,
       blogs: action.blogs
+    }
+  }),
+  on(BlogsActions.loadBlogsError, (state, action): IBlogsState => {
+    return {
+      ...state,
+      blogs: [],
+      error: action.error
     }
   })
 );
