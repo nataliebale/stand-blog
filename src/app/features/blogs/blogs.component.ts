@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Ad } from "../../libs/components/ads-block/entity/ad.interface";
 import { Banner } from "../../libs/components/banner/entity/banner.interface";
 import { ICard } from "../../libs/components/card/entity/card.interface";
@@ -12,7 +12,8 @@ import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 @Component({
   selector: 'app-blogs',
   templateUrl: './blogs.component.html',
-  styleUrls: ['./blogs.component.scss']
+  styleUrls: ['./blogs.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogsComponent implements OnInit {
 

@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Banner } from "../../../libs/components/banner/entity/banner.interface";
 import { Ad } from "../../../libs/components/ads-block/entity/ad.interface";
 import { ActivatedRoute } from "@angular/router";
@@ -7,7 +7,8 @@ import { ICard } from "../../../libs/components/card/entity/card.interface";
 @Component({
   selector: 'app-blog-details',
   templateUrl: './blog-details.component.html',
-  styleUrls: ['./blog-details.component.scss']
+  styleUrls: ['./blog-details.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogDetailsComponent implements OnInit {
 
