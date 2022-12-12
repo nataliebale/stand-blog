@@ -1,4 +1,4 @@
-import {Component, ViewEncapsulation} from '@angular/core';
+import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
 import {OwlOptions} from "ngx-owl-carousel-o";
 import {Slide} from "./entity/swiper.interface";
 
@@ -6,7 +6,8 @@ import {Slide} from "./entity/swiper.interface";
   selector: 'app-swiper',
   templateUrl: './swiper.component.html',
   styleUrls: ['./swiper.component.scss'],
-  encapsulation: ViewEncapsulation.None
+  encapsulation: ViewEncapsulation.None,
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SwiperComponent {
   customOptions: OwlOptions = {
