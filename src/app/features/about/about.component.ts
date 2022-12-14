@@ -3,6 +3,7 @@ import {Banner} from "../../libs/components/banner/entity/banner.interface";
 import { AboutService } from "../../core/services/about/about.service";
 import { IAbout } from "./entity/about.interface";
 import { Observable } from "rxjs";
+import { BannerService } from "../../core/services/banner/banner.service";
 
 @Component({
   selector: 'app-about',
@@ -19,9 +20,10 @@ export class AboutComponent implements OnInit {
   //   image: 'assets/images/heading-bg.jpg'
   // }
 
-  banner$: Observable<Banner> =
+  banner$: Observable<Banner> = this.bannerService.getBanner$();
 
-  constructor(private bannerService: BannerService) { }
+  constructor(private aboutService: AboutService,
+              private bannerService: BannerService) { }
 
   ngOnInit(): void {
   }
