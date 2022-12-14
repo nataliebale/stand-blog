@@ -13,13 +13,15 @@ import { Observable } from "rxjs";
 export class AboutComponent implements OnInit {
   public aboutData$: Observable<IAbout> = this.aboutService.getAbout$();
 
-  banner: Banner = {
-    title: 'RECENT POSTS',
-    description: "OUR RECENT BLOG ENTRIES",
-    image: 'assets/images/heading-bg.jpg'
-  }
+  // banner: Banner = {
+  //   title: 'RECENT POSTS',
+  //   description: "OUR RECENT BLOG ENTRIES",
+  //   image: 'assets/images/heading-bg.jpg'
+  // }
 
-  constructor(private aboutService: AboutService) { }
+  banner$: Observable<Banner> =
+
+  constructor(private bannerService: BannerService) { }
 
   ngOnInit(): void {
   }
