@@ -12,14 +12,7 @@ import { BannerService } from "../../core/services/banner/banner.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AboutComponent implements OnInit {
-  public aboutData$: Observable<IAbout> = this.aboutService.getAbout$();
-
-  // banner: Banner = {
-  //   title: 'RECENT POSTS',
-  //   description: "OUR RECENT BLOG ENTRIES",
-  //   image: 'assets/images/heading-bg.jpg'
-  // }
-
+  aboutData$: Observable<IAbout> = this.aboutService.getAbout$();
   banner$: Observable<Banner> = this.bannerService.getBanner$();
 
   constructor(private aboutService: AboutService,

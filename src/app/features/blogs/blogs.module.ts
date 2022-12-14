@@ -9,6 +9,7 @@ import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { HttpClientModule } from "@angular/common/http";
 import { StoreModule } from "@ngrx/store";
 import { blogsReducer } from "../../core/store/blogs/reducers/blogs.reducer";
+import { BannerService } from "../../core/services/banner/banner.service";
 
 
 @NgModule({
@@ -22,6 +23,9 @@ import { blogsReducer } from "../../core/store/blogs/reducers/blogs.reducer";
     BlogsRoutingModule,
     HttpClientModule,
   ],
-  providers: [ BlogsService ]
+  providers: [
+    BlogsService,
+    BannerService
+  ]
 })
 export class BlogsModule { }

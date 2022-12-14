@@ -1,6 +1,8 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Banner } from "../../libs/components/banner/entity/banner.interface";
 import { FormTitles, IFormData } from "../../libs/components/form/entity/form.interface";
+import { BannerService } from "../../core/services/banner/banner.service";
+import { Observable } from "rxjs";
 
 @Component({
   selector: 'app-contact',
@@ -18,18 +20,14 @@ export class ContactComponent implements OnInit {
     formTitle: "send us message"
   }
 
-  banner: Banner = {
-    title: 'CONTACT US',
-    description: "LET’S STAY IN TOUCH!",
-    image: 'assets/images/heading-bg.jpg'
-  }
+  banner$: Observable<Banner | null> = this.bannerService.getBanner$();
 
-  constructor() { }
+  constructor(private bannerService: BannerService) { }
 
   ngOnInit(): void {
   }
 
-  public getFormData(data: IFormData) : void {
+  getFormData(data: IFormData) : void {
     console.log(data)
   }
 }

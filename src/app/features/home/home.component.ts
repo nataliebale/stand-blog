@@ -16,14 +16,15 @@ import { getBlogs } from "../../core/store/blogs/selectors/blogs.selector";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-  public ad: Ad = {
+  cards$: Observable<ICard[] | null> = this.store.select(getBlogs);
+
+  ad: Ad = {
     title: 'Stand Blog HTML5 Template',
     description: 'Creative HTML Template For Bloggers!',
     url: 'https://templatemo.com/tm-551-stand-blog',
     image: 'assets/images/cta-bg.jpg',
     btnText: 'download now!'
   }
-  public cards$: Observable<ICard[] | null> = this.store.select(getBlogs);
 
   constructor(private blogsService: BlogsService,
               private store: Store<IBlogsState>) { }

@@ -4,6 +4,8 @@ import { ContactComponent } from './contact.component';
 import { RouterModule, Routes } from "@angular/router";
 import { ComponentsModule } from "../../libs/components/components.module";
 import { FormModule } from "../../libs/components/form/form.module";
+import { BannerService } from "../../core/services/banner/banner.service";
+import { HttpClientModule } from "@angular/common/http";
 
 const ROUTES: Routes = [
   {
@@ -16,11 +18,15 @@ const ROUTES: Routes = [
   declarations: [
     ContactComponent
   ],
-    imports: [
-        CommonModule,
-        ComponentsModule,
-        RouterModule.forChild(ROUTES),
-        FormModule
-    ]
+  imports: [
+      CommonModule,
+      ComponentsModule,
+      RouterModule.forChild(ROUTES),
+      HttpClientModule,
+      FormModule
+  ],
+  providers: [
+    BannerService,
+  ]
 })
 export class ContactModule { }

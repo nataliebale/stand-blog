@@ -7,11 +7,8 @@ import {Banner} from "./entity/banner.interface";
   styleUrls: ['./banner.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class BannerComponent implements OnInit {
-  @Input() public banner: Banner;
+export class BannerComponent {
+  @Input() banner: Banner | null;
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
 }

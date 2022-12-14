@@ -3,6 +3,8 @@ import { Banner } from "../../../libs/components/banner/entity/banner.interface"
 import { Ad } from "../../../libs/components/ads-block/entity/ad.interface";
 import { ActivatedRoute } from "@angular/router";
 import { ICard } from "../../../libs/components/card/entity/card.interface";
+import { Observable } from "rxjs";
+import { BannerService } from "../../../core/services/banner/banner.service";
 
 @Component({
   selector: 'app-blog-details',
@@ -11,12 +13,7 @@ import { ICard } from "../../../libs/components/card/entity/card.interface";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogDetailsComponent implements OnInit {
-
-  banner: Banner = {
-    title: 'ABOUT US',
-    description: "MORE ABOUT US!",
-    image: 'assets/images/heading-bg.jpg'
-  }
+  banner$: Observable<Banner | null> = this.bannerService.getBanner$();
 
   public ad: Ad = {
     title: 'Stand Blog HTML5 Template',
@@ -26,7 +23,7 @@ export class BlogDetailsComponent implements OnInit {
     btnText: 'download now!'
   }
 
-  public card: ICard = {
+  card: ICard = {
     id: 1,
     image: 'assets/images/banner-item-01.jpg',
     tag: 'nature',
@@ -37,9 +34,10 @@ export class BlogDetailsComponent implements OnInit {
     description: 'Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you.'
   }
 
-  private itemId: string | null;
+  private itemId!: string | null;
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute,
+              private bannerService: BannerService) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {

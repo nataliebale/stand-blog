@@ -8,6 +8,7 @@ import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
 import { Store } from "@ngrx/store";
 import { getBlogs, getError } from "../../core/store/blogs/selectors/blogs.selector";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
+import { BannerService } from "../../core/services/banner/banner.service";
 
 @Component({
   selector: 'app-blogs',
@@ -16,14 +17,11 @@ import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogsComponent implements OnInit {
+  banner$: Observable<Banner | null> = this.bannerService.getBanner$();
+  cards$: Observable<ICard[] | null> = this.store.select(getBlogs);
+  cardsError$: Observable<string> = this.store.select(getError);
 
-  banner: Banner = {
-    title: 'ABOUT US',
-    description: "MORE ABOUT US!",
-    image: 'assets/images/heading-bg.jpg'
-  }
-
-  public ad: Ad = {
+  ad: Ad = {
     title: 'Stand Blog HTML5 Template',
     description: 'Creative HTML Template For Bloggers!',
     url: 'https://templatemo.com/tm-551-stand-blog',
@@ -31,11 +29,8 @@ export class BlogsComponent implements OnInit {
     btnText: 'download now!'
   }
 
-  public cards$: Observable<ICard[] | null> = this.store.select(getBlogs);
-
-  public cardsError$: Observable<string> = this.store.select(getError);
-
   constructor(private blogsService: BlogsService,
+              private bannerService: BannerService,
               private store: Store<IBlogsState>) { }
 
   ngOnInit(): void {

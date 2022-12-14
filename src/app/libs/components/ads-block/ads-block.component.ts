@@ -7,12 +7,8 @@ import { Ad } from "./entity/ad.interface";
   styleUrls: ['./ads-block.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class AdsBlockComponent implements OnInit {
-  @Input() public ad: Ad;
+export class AdsBlockComponent {
+  @Input() ad: Ad;
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }

@@ -6,6 +6,7 @@ import { AboutComponent } from './about.component';
 import {ComponentsModule} from "../../libs/components/components.module";
 import { HttpClientModule } from "@angular/common/http";
 import { AboutService } from "../../core/services/about/about.service";
+import { BannerService } from "../../core/services/banner/banner.service";
 
 const ROUTES: Routes = [
   {
@@ -25,7 +26,8 @@ const ROUTES: Routes = [
     HttpClientModule
   ],
   providers: [
-    AboutService
+    AboutService,
+    BannerService
   ]
 })
 export class AboutModule { }
