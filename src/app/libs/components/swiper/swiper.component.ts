@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, ViewEncapsulation } from '@angular/core';
-import {OwlOptions} from "ngx-owl-carousel-o";
-import {Slide} from "./entity/swiper.interface";
+import { OwlOptions } from "ngx-owl-carousel-o";
+import { Slide } from "./entity/swiper.interface";
 
 @Component({
   selector: 'app-swiper',
