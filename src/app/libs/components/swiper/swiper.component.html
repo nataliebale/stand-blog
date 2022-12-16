@@ -2,7 +2,7 @@
 
   <ng-container *ngFor="let slide of slides">
     <ng-template carouselSlide>
-      <div class="swiper_item" [style.backgroundImage]="'url(' + slide?.img + ')'">
+      <div class="swiper_item" [style.backgroundImage]="'url(' + slide?.image + ')'">
         <div class="swiper_text">
           <div class="swiper_tag">
             {{ slide?.tag | uppercase }}
