@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Banner } from "../../libs/components/banner/entity/banner.interface";
-import { FormTitles, IFormData } from "../../libs/components/form/entity/form.interface";
+import { IFormData, IFormTitles } from "../../libs/components/form/entity/form.interface";
 import { BannerService } from "../../core/services/banner/banner.service";
 import { Observable } from "rxjs";
 
@@ -11,7 +11,7 @@ import { Observable } from "rxjs";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ContactComponent implements OnInit {
-  contactFormTitles: FormTitles = {
+  contactFormTitles: IFormTitles = {
     textControlTitle: "your name",
     mailControlTitle: "your email",
     subjectControlTitle: "subject",

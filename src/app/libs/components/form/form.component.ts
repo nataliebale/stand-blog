@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { FormTitles, IFormData } from "./entity/form.interface";
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
+import { IFormData, IFormTitles } from "./entity/form.interface";
 import { FormControl, FormGroup, Validators } from "@angular/forms";
 
 @Component({
@@ -8,8 +8,8 @@ import { FormControl, FormGroup, Validators } from "@angular/forms";
   styleUrls: ['./form.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class FormComponent implements OnInit {
-  @Input() formTitles: FormTitles;
+export class FormComponent {
+  @Input() formTitles: IFormTitles;
   @Output() formData: EventEmitter<IFormData> = new EventEmitter<IFormData>();
 
   form: FormGroup = new FormGroup({
@@ -24,9 +24,6 @@ export class FormComponent implements OnInit {
   )
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
 
   public onSubmit(): void {
     this.formData.emit(this.form.value);

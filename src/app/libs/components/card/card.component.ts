@@ -1,5 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { ICard } from "./entity/card.interface";
+import { IBlog } from "./entity/card.interface";
 import { Store } from "@ngrx/store";
 import { IAppState } from "../../../core/store/blogs/entity/blogs.interface";
 import { getPopularBlog, getShowInDetail } from "../../../core/store/blogs/selectors/blogs.selector";
@@ -11,7 +11,7 @@ import { setPopularBlog, showInDetailAction } from "../../../core/store/blogs/ac
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() card: ICard; // TODO: refactor
+  @Input() card: IBlog;
   @Input() showInDetail: boolean = false;
   isPopular: boolean;
   displayFullText: boolean;

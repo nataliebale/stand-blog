@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Ad } from "../../libs/components/ads-block/entity/ad.interface";
-import { ICard } from "../../libs/components/card/entity/card.interface";
+import { IBlog } from "../../libs/components/card/entity/card.interface";
 import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { Observable } from "rxjs";
 import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
@@ -15,9 +15,9 @@ import { getBlogs } from "../../core/store/blogs/selectors/blogs.selector";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-  cards$: Observable<ICard[] | null> = this.store.select(getBlogs);
+  cards$: Observable<IBlog[] | null> = this.store.select(getBlogs); // TODO | null
 
-  ad: Ad = {
+  ad: Ad = { // TODO: refactor
     title: 'Stand Blog HTML5 Template',
     description: 'Creative HTML Template For Bloggers!',
     url: 'https://templatemo.com/tm-551-stand-blog',
@@ -33,7 +33,7 @@ export class HomeComponent implements OnInit {
   }
 
   onSearch(value: string): void {
-    console.log(value);
+    console.log(value); // TODO
   }
 
 }

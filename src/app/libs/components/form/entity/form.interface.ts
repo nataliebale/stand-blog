@@ -1,4 +1,4 @@
-export interface FormTitles{
+export interface IFormTitles{
   textControlTitle: string;
   mailControlTitle: string;
   subjectControlTitle: string;

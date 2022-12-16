@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 import { OwlOptions } from "ngx-owl-carousel-o";
-import { ICard } from "../card/entity/card.interface";
+import { IBlog } from "../card/entity/card.interface";
 
 @Component({
   selector: 'app-swiper',
@@ -10,7 +10,8 @@ import { ICard } from "../card/entity/card.interface";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SwiperComponent {
-  @Input() slides: ICard[] | null;
+  @Input() slides: IBlog[] | null;
+
   customOptions: OwlOptions = {
     loop: true,
     nav: true,
@@ -33,43 +34,4 @@ export class SwiperComponent {
       }
     },
   }
-
-  // slides: Slide[] = [
-  //   {
-  //     id: 1,
-  //     img: "assets/images/banner-item-01.jpg",
-  //     tag: "nature",
-  //     title: 'Donec porttitor augue at velit',
-  //     role: 'Admin',
-  //     date: 'May 26, 2020',
-  //     numOfComments: 72
-  //   },
-  //   {
-  //     id: 2,
-  //     img: "assets/images/banner-item-02.jpg",
-  //     tag: "nature",
-  //     title: 'Donec porttitor augue at velit',
-  //     role: 'Admin',
-  //     date: 'May 26, 2020',
-  //     numOfComments: 72
-  //   },
-  //   {
-  //     id: 3,
-  //     img: "assets/images/banner-item-03.jpg",
-  //     tag: "nature",
-  //     title: 'Donec porttitor augue at velit',
-  //     role: 'Admin',
-  //     date: 'May 26, 2020',
-  //     numOfComments: 72
-  //   },
-  //   {
-  //     id: 4,
-  //     img: "assets/images/banner-item-04.jpg",
-  //     tag: "nature",
-  //     title: 'Donec porttitor augue at velit',
-  //     role: 'Admin',
-  //     date: 'May 26, 2020',
-  //     numOfComments: 72
-  //   },
-  // ];
 }

@@ -1,10 +1,10 @@
 import * as AppState from "../../app/entity/app.interface";
-import { ICard } from "../../../../libs/components/card/entity/card.interface";
+import { IBlog } from "../../../../libs/components/card/entity/card.interface";
 
 export interface IBlogsState{
   showInDetail: boolean;
   popularBlog: number | null;
-  blogs: ICard[] | null;
+  blogs: IBlog[] | null;
   error: string;
 }
 

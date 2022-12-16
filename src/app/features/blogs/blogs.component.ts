@@ -1,7 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Ad } from "../../libs/components/ads-block/entity/ad.interface";
 import { Banner } from "../../libs/components/banner/entity/banner.interface";
-import { ICard } from "../../libs/components/card/entity/card.interface";
 import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { Observable } from "rxjs";
 import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
@@ -9,6 +8,7 @@ import { Store } from "@ngrx/store";
 import { getBlogs, getError } from "../../core/store/blogs/selectors/blogs.selector";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 import { BannerService } from "../../core/services/banner/banner.service";
+import { IBlog } from "../../libs/components/card/entity/card.interface";
 
 @Component({
   selector: 'app-blogs',
@@ -17,11 +17,11 @@ import { BannerService } from "../../core/services/banner/banner.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogsComponent implements OnInit {
-  banner$: Observable<Banner | null> = this.bannerService.getBanner$();
-  cards$: Observable<ICard[] | null> = this.store.select(getBlogs);
+  banner$: Observable<Banner | null> = this.bannerService.getBanner$(); // TODO: refactor
+  cards$: Observable<IBlog[] | null> = this.store.select(getBlogs); // TODO: refactor
   cardsError$: Observable<string> = this.store.select(getError);
 
-  ad: Ad = {
+  ad: Ad = { // TODO: refactor
     title: 'Stand Blog HTML5 Template',
     description: 'Creative HTML Template For Bloggers!',
     url: 'https://templatemo.com/tm-551-stand-blog',
@@ -36,5 +36,4 @@ export class BlogsComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(BlogsActions.loadBlogs())
   }
-
 }

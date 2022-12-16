@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { ICard } from "../../../../libs/components/card/entity/card.interface";
+import { IBlog } from "../../../../libs/components/card/entity/card.interface";
 
 export const showInDetailAction = createAction('[Blogs] show in detail');
 
@@ -14,7 +14,7 @@ export const loadBlogs = createAction(
 
 export const loadBlogsSuccess = createAction(
   '[Blogs] load blogs success',
-  props<{ blogs: ICard[]}>()
+  props<{ blogs: IBlog[]}>()
 )
 
 export const loadBlogsError = createAction(

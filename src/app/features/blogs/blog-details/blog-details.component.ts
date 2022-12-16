@@ -2,9 +2,9 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Banner } from "../../../libs/components/banner/entity/banner.interface";
 import { Ad } from "../../../libs/components/ads-block/entity/ad.interface";
 import { ActivatedRoute } from "@angular/router";
-import { ICard } from "../../../libs/components/card/entity/card.interface";
 import { Observable } from "rxjs";
 import { BannerService } from "../../../core/services/banner/banner.service";
+import { IBlog } from "../../../libs/components/card/entity/card.interface";
 
 @Component({
   selector: 'app-blog-details',
@@ -13,9 +13,9 @@ import { BannerService } from "../../../core/services/banner/banner.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogDetailsComponent implements OnInit {
-  banner$: Observable<Banner | null> = this.bannerService.getBanner$();
+  banner$: Observable<Banner | null> = this.bannerService.getBanner$(); // TODO: refactor
 
-  public ad: Ad = {
+  public ad: Ad = { // TODO: refactor
     title: 'Stand Blog HTML5 Template',
     description: 'Creative HTML Template For Bloggers!',
     url: 'https://templatemo.com/tm-551-stand-blog',
@@ -23,7 +23,7 @@ export class BlogDetailsComponent implements OnInit {
     btnText: 'download now!'
   }
 
-  card: ICard = {
+  card: IBlog = { // TODO: refactor
     id: 1,
     image: 'assets/images/banner-item-01.jpg',
     tag: 'nature',
@@ -46,7 +46,7 @@ export class BlogDetailsComponent implements OnInit {
     })
   }
 
-  getBlogById(){
+  getBlogById(){ // TODO: refactor
 
   }
 

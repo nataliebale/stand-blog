@@ -1,4 +1,4 @@
-export interface ICard{
+export interface IBlog{
   id: number;
   image: string;
   tag: string;
