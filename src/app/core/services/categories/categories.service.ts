@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { map, Observable } from "rxjs";
+import { map, Observable, shareReplay } from "rxjs";
 import { IBlog } from "../../../libs/components/card/entity/card.interface";
 
 @Injectable({
@@ -13,7 +13,8 @@ export class CategoriesService {
 
   public getCategories$(): Observable<IBlog[]> {
     return this.http.get<any>(this.blogsUrl).pipe(
-      map((data) => data?.categories)
+      map((data) => data?.categories),
+      shareReplay(1)
     );
   }
 }

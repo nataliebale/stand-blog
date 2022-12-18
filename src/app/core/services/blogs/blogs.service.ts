@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
-import { filter, map, Observable, shareReplay, tap } from "rxjs";
+import { map, Observable, shareReplay } from "rxjs";
 import { IBlog } from "../../../libs/components/card/entity/card.interface";
 
 @Injectable({
@@ -21,9 +21,10 @@ export class BlogsService {
   public getBlogById$(id: number): Observable<IBlog> {
     return this.http.get<any>(this.blogsUrl).pipe(
       map((data) => {
-        let fr = data?.posts.filter((item: IBlog) => item.id === id);
-        return fr.length ? fr[0] : null;
-      })
+        let res = data?.posts.filter((item: IBlog) => item.id === id);
+        return res.length ? res[0] : null;
+      }),
+      shareReplay(1)
     );
   }
 }
