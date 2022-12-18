@@ -2,9 +2,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Banner } from "../../../libs/components/banner/entity/banner.interface";
 import { Ad } from "../../../libs/components/ads-block/entity/ad.interface";
 import { ActivatedRoute } from "@angular/router";
-import { Observable } from "rxjs";
+import { filter, map, Observable, tap } from "rxjs";
 import { BannerService } from "../../../core/services/banner/banner.service";
 import { IBlog } from "../../../libs/components/card/entity/card.interface";
+import { BlogsService } from "../../../core/services/blogs/blogs.service";
 
 @Component({
   selector: 'app-blog-details',
@@ -23,31 +24,25 @@ export class BlogDetailsComponent implements OnInit {
     btnText: 'download now!'
   }
 
-  card: IBlog = { // TODO: refactor
-    id: 1,
-    image: 'assets/images/banner-item-01.jpg',
-    tag: 'nature',
-    title: 'Aenean pulvinar gravida sem nec',
-    role: 'Admin',
-    date: 'May 12, 2020',
-    numOfComments: 12,
-    description: 'Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you.'
-  }
+  card$: Observable<any>;
 
-  private itemId!: string | null;
+  itemId: number;
 
   constructor(private route: ActivatedRoute,
-              private bannerService: BannerService) { }
+              private bannerService: BannerService,
+              private blogsService: BlogsService) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     this.route.paramMap.subscribe(params => {
-      this.itemId = params.get('id');
+      this.itemId = Number(params.get('id'));
       this.getBlogById();
     })
   }
 
   getBlogById(){ // TODO: refactor
-
+    this.card$ = this.blogsService.getBlogById$(this.itemId).pipe(
+      tap(data => console.log(data))
+    )
   }
 
 }

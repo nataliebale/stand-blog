@@ -4,12 +4,12 @@
   <app-ads-block [ad]="ad"></app-ads-block>
 </section>
 
-<section class="container mt-100">
+<section *ngIf="itemId" class="container mt-100">
   <div class="row">
     <div class="col-9">
       <div class="row">
         <div class="mb-30">
-          <app-card [card]="card" [showInDetail]="true"></app-card>
+          <app-card [card]="card$ | async" [showInDetail]="true"></app-card>
         </div>
       </div>
     </div>

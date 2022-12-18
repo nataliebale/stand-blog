@@ -26,7 +26,7 @@ export class CardComponent implements OnInit {
 
     // TODO: unsubscribe
     this.store.select(getPopularBlog).subscribe(
-      state => this.isPopular = (state === this.card.id)
+      state => this.isPopular = (state === this.card?.id)
     )
   }
 

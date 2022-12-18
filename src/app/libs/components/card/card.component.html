@@ -1,30 +1,30 @@
 <div class="card">
-  <div class="card_img" [style.backgroundImage]="'url(' + card.image + ')'"></div>
+  <div class="card_img" [style.backgroundImage]="'url(' + card?.image + ')'"></div>
   <div class="card_content">
     <div class="card_header">
       <div class="card_header-tag d-flex justify-content-between">
         <p class="">
-          {{ card.tag }}
+          {{ card?.tag }}
         </p>
         <i class="fa-solid fa-star card_btn--popular"
            [class.active]="isPopular"
            (click)="onSetPopularProduct()"></i>
       </div>
       <a class="card_header-title"
-         [routerLink]="['/blogs', card.id]">
+         [routerLink]="['/blogs', card?.id]">
         <h4>
-          {{ card.title }}
+          {{ card?.title }}
         </h4>
       </a>
       <ul class="card_info">
         <li>
-          {{ card.role }}
+          {{ card?.role }}
         </li>
         <li>
-          {{ card.date }}
+          {{ card?.date }}
         </li>
         <li>
-          {{ card.numOfComments }} comments
+          {{ card?.numOfComments }} comments
         </li>
       </ul>
     </div>
@@ -46,7 +46,7 @@
     </div>
     <div class="card_description"
          [class.card_description--full]="displayFullText">
-      {{ card.description }}
+      {{ card?.description }}
     </div>
     <div class="card_footer">
       <span class="card_footer-icon">
