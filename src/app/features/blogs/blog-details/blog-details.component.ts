@@ -1,10 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Banner } from "../../../libs/components/banner/entity/banner.interface";
+import { IBanner } from "../../../libs/components/banner/entity/banner.interface";
 import { Ad } from "../../../libs/components/ads-block/entity/ad.interface";
 import { ActivatedRoute } from "@angular/router";
-import { filter, map, Observable, tap } from "rxjs";
+import { Observable } from "rxjs";
 import { BannerService } from "../../../core/services/banner/banner.service";
-import { IBlog } from "../../../libs/components/card/entity/card.interface";
 import { BlogsService } from "../../../core/services/blogs/blogs.service";
 
 @Component({
@@ -14,7 +13,7 @@ import { BlogsService } from "../../../core/services/blogs/blogs.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogDetailsComponent implements OnInit {
-  banner$: Observable<Banner | null> = this.bannerService.getBanner$(); // TODO: refactor
+  banner$: Observable<IBanner> = this.bannerService.getBanner$();
 
   public ad: Ad = { // TODO: refactor
     title: 'Stand Blog HTML5 Template',
@@ -35,14 +34,8 @@ export class BlogDetailsComponent implements OnInit {
   ngOnInit() {
     this.route.paramMap.subscribe(params => {
       this.itemId = Number(params.get('id'));
-      this.getBlogById();
+      this.card$ = this.blogsService.getBlogById$(this.itemId);
     })
-  }
-
-  getBlogById(){ // TODO: refactor
-    this.card$ = this.blogsService.getBlogById$(this.itemId).pipe(
-      tap(data => console.log(data))
-    )
   }
 
 }

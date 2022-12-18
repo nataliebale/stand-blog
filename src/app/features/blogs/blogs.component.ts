@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Ad } from "../../libs/components/ads-block/entity/ad.interface";
-import { Banner } from "../../libs/components/banner/entity/banner.interface";
+import { IBanner } from "../../libs/components/banner/entity/banner.interface";
 import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { Observable } from "rxjs";
 import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
@@ -17,7 +17,7 @@ import { IBlog } from "../../libs/components/card/entity/card.interface";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogsComponent implements OnInit {
-  banner$: Observable<Banner | null> = this.bannerService.getBanner$(); // TODO: refactor
+  banner$: Observable<IBanner> = this.bannerService.getBanner$();
   cards$: Observable<IBlog[] | null> = this.store.select(getBlogs); // TODO: refactor
   cardsError$: Observable<string> = this.store.select(getError);
 

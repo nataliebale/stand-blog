@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import {Banner} from "./entity/banner.interface";
+import { IBanner } from "./entity/banner.interface";
 
 @Component({
   selector: 'app-banner',
@@ -8,7 +8,7 @@ import {Banner} from "./entity/banner.interface";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BannerComponent {
-  @Input() banner: Banner | null;
+  @Input() banner: IBanner;
   constructor() { }
 
 }
