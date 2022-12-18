@@ -2,11 +2,10 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 
-import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
-import { getBlogs } from "../../core/store/blogs/selectors/blogs.selector";
 import { BannerService, BlogsService } from "../../core/services";
 import { IAd, IBlog } from "../../libs/components";
+import { getBlogs, IBlogsState } from "../../core/store/blogs";
 
 @Component({
   selector: 'app-home',

@@ -2,8 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
 import { Store } from "@ngrx/store";
 
-import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
-import { getBlogs, getError } from "../../core/store/blogs/selectors/blogs.selector";
+import { getBlogs, getError, IBlogsState } from "../../core/store/blogs";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 import { IAd, IBanner, IBlog } from "../../libs/components";
 import { BannerService, BlogsService } from "../../core/services";

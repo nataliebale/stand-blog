@@ -3,9 +3,8 @@ import { CommonModule } from '@angular/common';
 import { CardComponent } from './card.component';
 import { RouterModule } from "@angular/router";
 import { StoreModule } from "@ngrx/store";
-import { blogsReducer } from "../../../core/store/blogs/reducers/blogs.reducer";
 import { EffectsModule } from "@ngrx/effects";
-import { BlogsEffects } from "../../../core/store/blogs/effects/blogs.effects";
+import { BlogsEffects, blogsReducer } from "../../../core/store/blogs";
 
 
 

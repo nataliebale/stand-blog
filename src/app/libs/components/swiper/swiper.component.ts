@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, Input, ViewEncapsulation } from '@angular/core';
 import { OwlOptions } from "ngx-owl-carousel-o";
-import { IBlog } from "../card/entity/card.interface";
+import { IBlog } from "../card";
 
 @Component({
   selector: 'app-swiper',
@@ -10,7 +10,7 @@ import { IBlog } from "../card/entity/card.interface";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class SwiperComponent {
-  @Input() slides: IBlog[] | null;
+  @Input() slides: IBlog[];
 
   customOptions: OwlOptions = {
     loop: true,

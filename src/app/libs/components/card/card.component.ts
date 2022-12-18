@@ -1,10 +1,14 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IBlog } from "./entity/card.interface";
 import { Store } from "@ngrx/store";
-import { IAppState } from "../../../core/store/blogs/entity/blogs.interface";
-import { getPopularBlog, getShowInDetail } from "../../../core/store/blogs/selectors/blogs.selector";
-import { setPopularBlog, showInDetailAction } from "../../../core/store/blogs/actions/blogs.action";
 import { untilDestroyed } from "@ngneat/until-destroy";
+import {
+  getPopularBlog,
+  getShowInDetail,
+  IAppState,
+  setPopularBlog,
+  showInDetailAction
+} from "../../../core/store/blogs";
 
 @Component({
   selector: 'app-card',

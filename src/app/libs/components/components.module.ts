@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { AdsBlockComponent } from './ads-block/ads-block.component';
-import { BannerComponent } from './banner/banner.component';
+import { AdsBlockComponent } from "./ads-block";
+import { BannerComponent } from "./banner";
 
 const components = [
   AdsBlockComponent,
