@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Ad } from "../../libs/components/ads-block/entity/ad.interface";
+import { IAd } from "../../libs/components/ads-block/entity/ad.interface";
 import { IBlog } from "../../libs/components/card/entity/card.interface";
 import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { Observable } from "rxjs";
@@ -7,6 +7,7 @@ import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
 import { Store } from "@ngrx/store";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 import { getBlogs } from "../../core/store/blogs/selectors/blogs.selector";
+import { BannerService } from "../../core/services/banner/banner.service";
 
 @Component({
   selector: 'app-home',
@@ -17,15 +18,10 @@ import { getBlogs } from "../../core/store/blogs/selectors/blogs.selector";
 export class HomeComponent implements OnInit {
   cards$: Observable<IBlog[] | null> = this.store.select(getBlogs); // TODO | null
 
-  ad: Ad = { // TODO: refactor
-    title: 'Stand Blog HTML5 Template',
-    description: 'Creative HTML Template For Bloggers!',
-    url: 'https://templatemo.com/tm-551-stand-blog',
-    image: 'assets/images/cta-bg.jpg',
-    btnText: 'download now!'
-  }
+  ad$: Observable<IAd> = this.bannerService.getAd$();
 
   constructor(private blogsService: BlogsService,
+              private bannerService: BannerService,
               private store: Store<IBlogsState>) { }
 
   ngOnInit(): void {

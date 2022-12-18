@@ -1,4 +1,4 @@
-export interface Ad{
+export interface IAd{
   title: string;
   description: string;
   url: string;

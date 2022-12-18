@@ -1,5 +1,5 @@
-import { ChangeDetectionStrategy, Component, Input, OnInit } from '@angular/core';
-import { Ad } from "./entity/ad.interface";
+import { ChangeDetectionStrategy, Component, Input } from '@angular/core';
+import { IAd } from "./entity/ad.interface";
 
 @Component({
   selector: 'app-ads-block',
@@ -8,7 +8,7 @@ import { Ad } from "./entity/ad.interface";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class AdsBlockComponent {
-  @Input() ad: Ad;
+  @Input() ad: IAd;
 
   constructor() { }
 }

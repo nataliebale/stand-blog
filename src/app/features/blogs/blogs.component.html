@@ -1,7 +1,7 @@
 <app-banner [banner]="banner$ | async"></app-banner>
 
 <section class="container mt-100">
-  <app-ads-block [ad]="ad"></app-ads-block>
+  <app-ads-block [ad]="ad$ | async"></app-ads-block>
 </section>
 
 <section class="container mt-100">

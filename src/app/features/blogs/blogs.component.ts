@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { Ad } from "../../libs/components/ads-block/entity/ad.interface";
+import { IAd } from "../../libs/components/ads-block/entity/ad.interface";
 import { IBanner } from "../../libs/components/banner/entity/banner.interface";
 import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { Observable } from "rxjs";
@@ -21,13 +21,7 @@ export class BlogsComponent implements OnInit {
   cards$: Observable<IBlog[] | null> = this.store.select(getBlogs);
   cardsError$: Observable<string> = this.store.select(getError);
 
-  ad: Ad = { // TODO: refactor
-    title: 'Stand Blog HTML5 Template',
-    description: 'Creative HTML Template For Bloggers!',
-    url: 'https://templatemo.com/tm-551-stand-blog',
-    image: 'assets/images/cta-bg.jpg',
-    btnText: 'download now!'
-  }
+  ad$: Observable<IAd> = this.bannerService.getAd$();
 
   constructor(private blogsService: BlogsService,
               private bannerService: BannerService,

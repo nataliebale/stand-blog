@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { IBanner } from "../../../libs/components/banner/entity/banner.interface";
-import { Ad } from "../../../libs/components/ads-block/entity/ad.interface";
+import { IAd } from "../../../libs/components/ads-block/entity/ad.interface";
 import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs";
 import { BannerService } from "../../../core/services/banner/banner.service";
@@ -19,13 +19,7 @@ export class BlogDetailsComponent implements OnInit {
 
   itemId: number;
 
-  ad: Ad = { // TODO: refactor
-    title: 'Stand Blog HTML5 Template',
-    description: 'Creative HTML Template For Bloggers!',
-    url: 'https://templatemo.com/tm-551-stand-blog',
-    image: 'assets/images/cta-bg.jpg',
-    btnText: 'download now!'
-  }
+  ad$: Observable<IAd> = this.bannerService.getAd$();
 
   constructor(private route: ActivatedRoute,
               private bannerService: BannerService,

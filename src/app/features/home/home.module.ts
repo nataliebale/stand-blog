@@ -9,6 +9,7 @@ import { CardModule } from "../../libs/components/card/card.module";
 import { FiltersModule } from "../../libs/components/filters/filters.module";
 import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { HttpClientModule } from "@angular/common/http";
+import { BannerService } from "../../core/services/banner/banner.service";
 
 const ROUTES: Routes = [
   {
@@ -31,7 +32,8 @@ const ROUTES: Routes = [
       HttpClientModule
   ],
   providers: [
-    BlogsService
+    BlogsService,
+    BannerService
   ]
 })
 export class HomeModule { }
