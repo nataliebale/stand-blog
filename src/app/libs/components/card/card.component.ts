@@ -4,6 +4,7 @@ import { Store } from "@ngrx/store";
 import { IAppState } from "../../../core/store/blogs/entity/blogs.interface";
 import { getPopularBlog, getShowInDetail } from "../../../core/store/blogs/selectors/blogs.selector";
 import { setPopularBlog, showInDetailAction } from "../../../core/store/blogs/actions/blogs.action";
+import { untilDestroyed } from "@ngneat/until-destroy";
 
 @Component({
   selector: 'app-card',
@@ -20,13 +21,15 @@ export class CardComponent implements OnInit {
   constructor(private store: Store<IAppState>) { }
 
   ngOnInit() {
-    // TODO: unsubscribe
-    this.store.select(getShowInDetail).subscribe(
+    this.store.select(getShowInDetail).pipe(
+      untilDestroyed(this)
+    ).subscribe(
       state => this.displayFullText = state
     )
-
-    // TODO: unsubscribe
-    this.store.select(getPopularBlog).subscribe(
+    
+    this.store.select(getPopularBlog).pipe(
+      untilDestroyed(this)
+    ).subscribe(
       state => this.isPopular = (state === this.card?.id)
     )
   }
