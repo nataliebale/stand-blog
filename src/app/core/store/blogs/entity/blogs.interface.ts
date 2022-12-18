@@ -1,5 +1,5 @@
 import * as AppState from "../../app/entity/app.interface";
-import { IBlog } from "../../../../libs/components/card/entity/card.interface";
+import { IBlog } from "../../../../libs/components";
 
 export interface IBlogsState{
   showInDetail: boolean;

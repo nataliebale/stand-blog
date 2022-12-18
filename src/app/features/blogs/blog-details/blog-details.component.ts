@@ -1,11 +1,9 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { IBanner } from "../../../libs/components/banner/entity/banner.interface";
-import { IAd } from "../../../libs/components/ads-block/entity/ad.interface";
 import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs";
-import { BannerService } from "../../../core/services/banner/banner.service";
-import { BlogsService } from "../../../core/services/blogs/blogs.service";
-import { IBlog } from "../../../libs/components/card/entity/card.interface";
+
+import { IAd, IBanner, IBlog } from "../../../libs/components";
+import { BannerService, BlogsService } from "../../../core/services";
 
 @Component({
   selector: 'app-blog-details',

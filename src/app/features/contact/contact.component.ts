@@ -1,8 +1,8 @@
-import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { IBanner } from "../../libs/components/banner/entity/banner.interface";
-import { IFormData, IFormTitles } from "../../libs/components/form/entity/form.interface";
-import { BannerService } from "../../core/services/banner/banner.service";
+import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { Observable } from "rxjs";
+
+import { IBanner, IFormData, IFormTitles } from "../../libs/components";
+import { BannerService } from "../../core/services";
 
 @Component({
   selector: 'app-contact',
@@ -10,7 +10,9 @@ import { Observable } from "rxjs";
   styleUrls: ['./contact.component.scss'],
   changeDetection: ChangeDetectionStrategy.OnPush
 })
-export class ContactComponent implements OnInit {
+export class ContactComponent {
+  banner$: Observable<IBanner> = this.bannerService.getBanner$();
+
   contactFormTitles: IFormTitles = {
     textControlTitle: "your name",
     mailControlTitle: "your email",
@@ -20,12 +22,7 @@ export class ContactComponent implements OnInit {
     formTitle: "send us message"
   }
 
-  banner$: Observable<IBanner> = this.bannerService.getBanner$();
-
   constructor(private bannerService: BannerService) { }
-
-  ngOnInit(): void {
-  }
 
   getFormData(data: IFormData) : void {
     console.log(data)

@@ -1,15 +1,11 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { RouterModule, Routes } from "@angular/router";
+import { HttpClientModule } from "@angular/common/http";
 
 import { HomeComponent } from "./home.component";
-import { SwiperModule } from "../../libs/components/swiper/swiper.module";
-import { ComponentsModule} from "../../libs/components/components.module";
-import { CardModule } from "../../libs/components/card/card.module";
-import { FiltersModule } from "../../libs/components/filters/filters.module";
-import { BlogsService } from "../../core/services/blogs/blogs.service";
-import { HttpClientModule } from "@angular/common/http";
-import { BannerService } from "../../core/services/banner/banner.service";
+import { CardModule, ComponentsModule, FiltersModule, SwiperModule } from "../../libs/components";
+import { BannerService, BlogsService } from "../../core/services";
 
 const ROUTES: Routes = [
   {

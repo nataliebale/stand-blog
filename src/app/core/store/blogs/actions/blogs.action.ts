@@ -1,5 +1,5 @@
 import { createAction, props } from "@ngrx/store";
-import { IBlog } from "../../../../libs/components/card/entity/card.interface";
+import { IBlog } from "../../../../libs/components";
 
 export const showInDetailAction = createAction('[Blogs] show in detail');
 

@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { map, Observable, shareReplay } from "rxjs";
-import { IBlog } from "../../../libs/components/card/entity/card.interface";
+import { IBlog } from "../../../libs/components";
 
 @Injectable({
   providedIn: 'root'

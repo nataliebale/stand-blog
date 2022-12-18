@@ -1,8 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { map, Observable, shareReplay } from "rxjs";
-import { IBanner } from "../../../libs/components/banner/entity/banner.interface";
-import { IAd } from "../../../libs/components/ads-block/entity/ad.interface";
+import { IAd, IBanner } from "../../../libs/components";
 
 @Injectable({
   providedIn: 'root'

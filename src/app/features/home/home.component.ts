@@ -1,13 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { IAd } from "../../libs/components/ads-block/entity/ad.interface";
-import { IBlog } from "../../libs/components/card/entity/card.interface";
-import { BlogsService } from "../../core/services/blogs/blogs.service";
-import { Observable } from "rxjs";
-import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
 import { Store } from "@ngrx/store";
+import { Observable } from "rxjs";
+
+import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 import { getBlogs } from "../../core/store/blogs/selectors/blogs.selector";
-import { BannerService } from "../../core/services/banner/banner.service";
+import { BannerService, BlogsService } from "../../core/services";
+import { IAd, IBlog } from "../../libs/components";
 
 @Component({
   selector: 'app-home',
@@ -17,7 +16,6 @@ import { BannerService } from "../../core/services/banner/banner.service";
 })
 export class HomeComponent implements OnInit {
   cards$: Observable<IBlog[] | null> = this.store.select(getBlogs)
-
   ad$: Observable<IAd> = this.bannerService.getAd$();
 
   constructor(private blogsService: BlogsService,

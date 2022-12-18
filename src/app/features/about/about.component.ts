@@ -1,9 +1,9 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { IBanner } from "../../libs/components/banner/entity/banner.interface";
-import { AboutService } from "../../core/services/about/about.service";
-import { IAbout } from "./entity/about.interface";
 import { Observable } from "rxjs";
-import { BannerService } from "../../core/services/banner/banner.service";
+
+import { IAbout } from "./entity/about.interface";
+import { IBanner } from "../../libs/components";
+import { AboutService, BannerService } from "../../core/services";
 
 @Component({
   selector: 'app-about',

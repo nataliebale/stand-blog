@@ -1,14 +1,12 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
-import { IAd } from "../../libs/components/ads-block/entity/ad.interface";
-import { IBanner } from "../../libs/components/banner/entity/banner.interface";
-import { BlogsService } from "../../core/services/blogs/blogs.service";
 import { Observable } from "rxjs";
-import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
 import { Store } from "@ngrx/store";
+
+import { IBlogsState } from "../../core/store/blogs/entity/blogs.interface";
 import { getBlogs, getError } from "../../core/store/blogs/selectors/blogs.selector";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
-import { BannerService } from "../../core/services/banner/banner.service";
-import { IBlog } from "../../libs/components/card/entity/card.interface";
+import { IAd, IBanner, IBlog } from "../../libs/components";
+import { BannerService, BlogsService } from "../../core/services";
 
 @Component({
   selector: 'app-blogs',
