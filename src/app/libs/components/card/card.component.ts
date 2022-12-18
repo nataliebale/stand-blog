@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IBlog } from "./entity/card.interface";
 import { Store } from "@ngrx/store";
-import { untilDestroyed } from "@ngneat/until-destroy";
+import { UntilDestroy, untilDestroyed } from "@ngneat/until-destroy";
 import {
   getPopularBlog,
   getShowInDetail,
@@ -10,13 +10,22 @@ import {
   showInDetailAction
 } from "../../../core/store/blogs";
 
+@UntilDestroy()
 @Component({
   selector: 'app-card',
   templateUrl: './card.component.html',
   styleUrls: ['./card.component.scss']
 })
 export class CardComponent implements OnInit {
-  @Input() card: IBlog;
+  _card: IBlog;
+  get card(): IBlog {
+    return this._card;
+  }
+  @Input() set card(value: IBlog) {
+    this._card = value;
+    this.subscribeToStoreForPopularBlogs();
+  }
+
   @Input() showInDetail: boolean = false;
 
   isPopular: boolean;
@@ -30,7 +39,9 @@ export class CardComponent implements OnInit {
     ).subscribe(
       state => this.displayFullText = state
     )
+  }
 
+  private subscribeToStoreForPopularBlogs() {
     this.store.select(getPopularBlog).pipe(
       untilDestroyed(this)
     ).subscribe(
