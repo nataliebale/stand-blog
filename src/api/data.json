@@ -1,5 +1,5 @@
 {
-  "posts": [
+  "blogs": [
     {
       "id": 1,
       "image": "assets/images/banner-item-01.jpg",
@@ -31,7 +31,7 @@
       "description": "Stand Blog is a free HTML CSS template for your CMS theme. You can easily adapt or customize it for any kind of CMS or website builder. You are allowed to use it for your business. You are NOT allowed to re-distribute the template ZIP file on any template collection site for the download purpose. Contact TemplateMo for more info. Thank you."
     }
   ],
-  "popularPosts": [
+  "popularBlogs": [
     {
       "id": 1,
       "image": "assets/images/banner-item-01.jpg",

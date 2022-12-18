@@ -18,7 +18,7 @@ import { IBlog } from "../../libs/components/card/entity/card.interface";
 })
 export class BlogsComponent implements OnInit {
   banner$: Observable<IBanner> = this.bannerService.getBanner$();
-  cards$: Observable<IBlog[] | null> = this.store.select(getBlogs); // TODO: refactor
+  cards$: Observable<IBlog[] | null> = this.store.select(getBlogs);
   cardsError$: Observable<string> = this.store.select(getError);
 
   ad: Ad = { // TODO: refactor
