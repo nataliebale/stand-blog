@@ -5,6 +5,7 @@ import { ActivatedRoute } from "@angular/router";
 import { Observable } from "rxjs";
 import { BannerService } from "../../../core/services/banner/banner.service";
 import { BlogsService } from "../../../core/services/blogs/blogs.service";
+import { IBlog } from "../../../libs/components/card/entity/card.interface";
 
 @Component({
   selector: 'app-blog-details',
@@ -23,7 +24,7 @@ export class BlogDetailsComponent implements OnInit {
     btnText: 'download now!'
   }
 
-  card$: Observable<any>;
+  card$: Observable<IBlog>;
 
   itemId: number;
 
