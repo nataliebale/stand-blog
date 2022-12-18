@@ -13,12 +13,13 @@ import { setPopularBlog, showInDetailAction } from "../../../core/store/blogs/ac
 export class CardComponent implements OnInit {
   @Input() card: IBlog;
   @Input() showInDetail: boolean = false;
+
   isPopular: boolean;
   displayFullText: boolean;
 
   constructor(private store: Store<IAppState>) { }
 
-  ngOnInit(): void {
+  ngOnInit() {
     // TODO: unsubscribe
     this.store.select(getShowInDetail).subscribe(
       state => this.displayFullText = state
@@ -30,11 +31,11 @@ export class CardComponent implements OnInit {
     )
   }
 
-  onCheckChange(): void {
+  onCheckChange() {
     this.store.dispatch(showInDetailAction());
   }
 
-  onSetPopularProduct(): void {
+  onSetPopularProduct() {
     this.store.dispatch(setPopularBlog({ popularBlog: this.card.id }));
   }
 
