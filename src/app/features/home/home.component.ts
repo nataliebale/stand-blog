@@ -16,7 +16,7 @@ import { BannerService } from "../../core/services/banner/banner.service";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-  cards$: Observable<IBlog[] | null> = this.store.select(getBlogs); // TODO | null
+  cards$: Observable<IBlog[] | null> = this.store.select(getBlogs)
 
   ad$: Observable<IAd> = this.bannerService.getAd$();
 
