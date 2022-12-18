@@ -17,4 +17,11 @@ export class BannerService {
       shareReplay(1)
     );
   }
+
+  public getAd$(): Observable<IBanner> {
+    return this.http.get<any>(this.dataUrl).pipe(
+      map((data) => data?.ad),
+      shareReplay(1)
+    );
+  }
 }

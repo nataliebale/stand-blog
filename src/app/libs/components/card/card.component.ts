@@ -26,7 +26,7 @@ export class CardComponent implements OnInit {
     ).subscribe(
       state => this.displayFullText = state
     )
-    
+
     this.store.select(getPopularBlog).pipe(
       untilDestroyed(this)
     ).subscribe(

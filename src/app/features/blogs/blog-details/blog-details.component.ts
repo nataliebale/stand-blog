@@ -15,18 +15,17 @@ import { IBlog } from "../../../libs/components/card/entity/card.interface";
 })
 export class BlogDetailsComponent implements OnInit {
   banner$: Observable<IBanner> = this.bannerService.getBanner$();
+  card$: Observable<IBlog>;
 
-  public ad: Ad = { // TODO: refactor
+  itemId: number;
+
+  ad: Ad = { // TODO: refactor
     title: 'Stand Blog HTML5 Template',
     description: 'Creative HTML Template For Bloggers!',
     url: 'https://templatemo.com/tm-551-stand-blog',
     image: 'assets/images/cta-bg.jpg',
     btnText: 'download now!'
   }
-
-  card$: Observable<IBlog>;
-
-  itemId: number;
 
   constructor(private route: ActivatedRoute,
               private bannerService: BannerService,
