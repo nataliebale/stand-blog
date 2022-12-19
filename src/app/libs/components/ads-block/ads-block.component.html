@@ -1,16 +1,17 @@
-<div class="ad d-flex justify-content-between"
+<div *ngIf="ad"
+     class="ads-banner d-flex justify-content-between"
      [style.backgroundImage]="'url(' + ad?.image + ')'">
-  <div class="ad_text">
-    <div class="ad_title">
+  <div class="">
+    <div class="ads-banner_title">
+      {{ ad?.title }}
     </div>
-    <div class="ad_desc">
+    <div class="ads-banner_desc">
       {{ ad?.description }}
     </div>
   </div>
   <a [href]="ad?.url"
      target="_blank"
-     class="btn btn-orange ad_btn">
+     class="btn btn-orange ads-banner_btn">
     {{ ad?.btnText | uppercase }}
   </a>
 </div>
-{{ ad?.title }}
