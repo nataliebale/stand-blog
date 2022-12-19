@@ -16,9 +16,14 @@ export const getPopularBlog = createSelector(
 export const getBlogs = createSelector(
   getBlogsFeatureState,
   state => state.blogs
-)
+);
 
 export const getError = createSelector(
   getBlogsFeatureState,
   state => state.error
+);
+
+export const getPopularBlogs = createSelector(
+  getBlogsFeatureState,
+  state => state.popularBlogs
 )

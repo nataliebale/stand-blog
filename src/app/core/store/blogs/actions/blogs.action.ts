@@ -21,3 +21,17 @@ export const loadBlogsError = createAction(
   '[Blogs] load blogs error',
   props<{ error: string}>()
 )
+
+export const loadPopularBlogs = createAction(
+  '[Blogs] load popular blogs'
+)
+
+export const loadPopularBlogsSuccess = createAction(
+  '[Blogs] load popular blogs success',
+  props<{ popularBlogs: IBlog[]}>()
+)
+
+export const loadPopularBlogsError = createAction(
+  '[Blogs] load popular blogs error',
+  props<{ error: string}>()
+)

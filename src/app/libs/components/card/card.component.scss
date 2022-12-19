@@ -16,7 +16,9 @@
     text-transform: uppercase;
     letter-spacing: 0.5px;
     font-weight: 900;
-    color: variables.$color-orange;
+    p{
+      color: variables.$color-orange;
+    }
   }
 
   &_header-title{

@@ -5,6 +5,7 @@ export interface IBlogsState{
   showInDetail: boolean;
   popularBlog: number | null;
   blogs: IBlog[] | null;
+  popularBlogs: IBlog[] | null;
   error: string;
 }
 

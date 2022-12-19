@@ -18,6 +18,13 @@ export class BlogsService {
     );
   }
 
+  public getPopularBlogs$(): Observable<IBlog[]> {
+    return this.http.get<any>(this.blogsUrl).pipe(
+      map((data) => data?.popularBlogs),
+      shareReplay(1)
+    );
+  }
+
   public getBlogById$(id: number): Observable<IBlog> {
     return this.http.get<any>(this.blogsUrl).pipe(
       map((data) => {

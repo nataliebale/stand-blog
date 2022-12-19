@@ -6,6 +6,7 @@ const initialState: IBlogsState = {
   showInDetail: true,
   popularBlog: null,
   blogs: null,
+  popularBlogs: null,
   error: ''
 }
 
@@ -35,6 +36,19 @@ export const blogsReducer = createReducer<IBlogsState>(
     return {
       ...state,
       blogs: [],
+      error: action.error
+    }
+  }),
+  on(BlogsActions.loadPopularBlogsSuccess, (state, action): IBlogsState => {
+    return {
+      ...state,
+      popularBlogs: action.popularBlogs
+    }
+  }),
+  on(BlogsActions.loadPopularBlogsError, (state, action) => {
+    return {
+      ...state,
+      popularBlogs: [],
       error: action.error
     }
   })

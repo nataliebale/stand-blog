@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 import { BannerService, BlogsService } from "../../core/services";
 import { IAd, IBlog } from "../../libs/components";
-import { getBlogs, IBlogsState } from "../../core/store/blogs";
+import { getBlogs, getPopularBlogs, IBlogsState } from "../../core/store/blogs";
 
 @Component({
   selector: 'app-home',
@@ -14,7 +14,8 @@ import { getBlogs, IBlogsState } from "../../core/store/blogs";
   changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class HomeComponent implements OnInit {
-  cards$: Observable<IBlog[] | null> = this.store.select(getBlogs)
+  blogs$: Observable<IBlog[] | null> = this.store.select(getBlogs);
+  popularBlogs$: Observable<IBlog[] | null> = this.store.select(getPopularBlogs);
   ad$: Observable<IAd> = this.bannerService.getAd$();
 
   constructor(private blogsService: BlogsService,
@@ -22,7 +23,8 @@ export class HomeComponent implements OnInit {
               private store: Store<IBlogsState>) { }
 
   ngOnInit(): void {
-    this.store.dispatch(BlogsActions.loadBlogs())
+    this.store.dispatch(BlogsActions.loadBlogs());
+    this.store.dispatch(BlogsActions.loadPopularBlogs());
   }
 
   onSearch(value: string): void {

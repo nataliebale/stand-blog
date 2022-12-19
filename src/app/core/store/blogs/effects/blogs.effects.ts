@@ -22,4 +22,16 @@ export class BlogsEffects {
     )
   })
 
+  loadPopularBlogs$ = createEffect(() => {
+    return this.actions$.pipe(
+      ofType(BlogsActions.loadPopularBlogs),
+      mergeMap(() => this.blogsService.getPopularBlogs$().pipe(
+        map(popularBlogs => BlogsActions.loadPopularBlogsSuccess({ popularBlogs })),
+        catchError( error =>
+          of(BlogsActions.loadPopularBlogsError({error}))
+        ))
+      )
+    )
+  })
+
 }
