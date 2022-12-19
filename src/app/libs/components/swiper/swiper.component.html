@@ -7,7 +7,7 @@
           <div class="swiper_tag">
             {{ slide?.tag | uppercase }}
           </div>
-          <div class="swiper_title">
+          <div class="swiper_title" [routerLink]="['/blogs', slide?.id]">
             {{ slide?.title }}
           </div>
           <div class="swiper_text-footer">

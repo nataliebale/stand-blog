@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { CarouselModule } from "ngx-owl-carousel-o";
 
 import { SwiperComponent } from './swiper.component';
+import {RouterModule} from "@angular/router";
 
 
 
@@ -13,9 +14,10 @@ import { SwiperComponent } from './swiper.component';
   exports: [
     SwiperComponent
   ],
-  imports: [
-    CommonModule,
-    CarouselModule
-  ]
+    imports: [
+        CommonModule,
+        CarouselModule,
+        RouterModule
+    ]
 })
 export class SwiperModule { }
