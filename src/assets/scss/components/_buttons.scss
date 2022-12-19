@@ -12,6 +12,13 @@
     z-index: 1;
     color: variables.$color-white;
     transition: 0.3s;
+    margin: 0;
+  }
+
+  &:disabled{
+    p{
+      color: variables.$color-black
+    }
   }
 
   &::after{
