@@ -12,6 +12,11 @@
       <div *ngFor="let card of blogs$ | async" class="mb-30">
         <app-card [card]="card"></app-card>
       </div>
+      <button class="btn btn-orange width-100" [routerLink]="['/blogs']">
+        <p>
+          {{ 'view all posts' | uppercase }}
+        </p>
+      </button>
     </div>
     <div class="col-3">
       <app-blogs-filters></app-blogs-filters>
