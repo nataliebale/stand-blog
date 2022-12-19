@@ -3,8 +3,8 @@ import { Store } from "@ngrx/store";
 import { Observable } from "rxjs";
 
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
-import { BannerService, BlogsService } from "../../core/services";
-import { IAd, IBlog } from "../../libs/components";
+import { BannerService, BlogsService, CategoriesService } from "../../core/services";
+import { IAd, IBlog, ICategory } from "../../libs/components";
 import { getBlogs, getPopularBlogs, IBlogsState } from "../../core/store/blogs";
 
 @Component({
@@ -17,9 +17,11 @@ export class HomeComponent implements OnInit {
   blogs$: Observable<IBlog[] | null> = this.store.select(getBlogs);
   popularBlogs$: Observable<IBlog[] | null> = this.store.select(getPopularBlogs);
   ad$: Observable<IAd> = this.bannerService.getAd$();
+  categories$: Observable<ICategory[]> = this.categoriesService.getCategories$();
 
   constructor(private blogsService: BlogsService,
               private bannerService: BannerService,
+              private categoriesService: CategoriesService,
               private store: Store<IBlogsState>) { }
 
   ngOnInit(): void {

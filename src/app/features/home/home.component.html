@@ -14,7 +14,8 @@
       </div>
     </div>
     <div class="col-3">
-      <app-filters (searchEmit)="onSearch($event)"></app-filters>
+      <app-filters (searchEmit)="onSearch($event)"
+                   [categories]="categories$ | async"></app-filters>
     </div>
   </div>
 </section>
