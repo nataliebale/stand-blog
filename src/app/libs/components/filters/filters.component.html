@@ -16,7 +16,7 @@
     <li *ngFor="let category of categories"
       class="categories_item">
       <a>
-        {{ category.title }}
+        {{ category?.name }}
       </a>
     </li>
   </ul>
@@ -28,7 +28,7 @@
   <div class="filter-tags mt-30">
     <button *ngFor="let tag of tags"
             class="btn btn-white">
-      {{ tag.title }}
+      {{ tag.name }}
     </button>
   </div>
 </div>

@@ -4,8 +4,9 @@ import { RouterModule, Routes } from "@angular/router";
 import { HttpClientModule } from "@angular/common/http";
 
 import { HomeComponent } from "./home.component";
-import { CardModule, ComponentsModule, FiltersModule, SwiperModule } from "../../libs/components";
+import { BlogsFiltersModule, CardModule, ComponentsModule, FiltersModule, SwiperModule } from "../../libs/components";
 import { BannerService, BlogsService } from "../../core/services";
+import { AppModule } from "../../app.module";
 
 const ROUTES: Routes = [
   {
@@ -19,13 +20,14 @@ const ROUTES: Routes = [
     HomeComponent
   ],
   imports: [
-      CommonModule,
-      RouterModule.forChild(ROUTES),
-      FiltersModule,
-      SwiperModule,
-      ComponentsModule,
-      CardModule,
-      HttpClientModule
+    CommonModule,
+    RouterModule.forChild(ROUTES),
+    FiltersModule,
+    SwiperModule,
+    ComponentsModule,
+    CardModule,
+    HttpClientModule,
+    BlogsFiltersModule
   ],
   providers: [
     BlogsService,

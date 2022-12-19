@@ -99,6 +99,32 @@
       "name": "Responsive"
     }
   ],
+  "categories": [
+    {
+      "id": 1,
+      "name": "Lifestyle"
+    },
+    {
+      "id": 2,
+      "name": "Creative"
+    },
+    {
+      "id": 3,
+      "name": "PSD"
+    },
+    {
+      "id": 4,
+      "name": "Style"
+    },
+    {
+      "id": 5,
+      "name": "Design"
+    },
+    {
+      "id": 6,
+      "name": "Responsive"
+    }
+  ],
   "about": {
     "image": "assets/images/about-us.jpg",
     "title": "Two-One Donec porttitor augue",

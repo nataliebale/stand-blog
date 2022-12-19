@@ -6,15 +6,8 @@
 
 <section *ngIf="itemId" class="container mt-100">
   <div class="row">
-    <div class="col-9">
-      <div class="row">
-        <div class="mb-30">
-          <app-card [card]="card$ | async" [showInDetail]="true"></app-card>
-        </div>
-      </div>
-    </div>
-    <div class="col-3">
-      test
+    <div class="mb-30">
+      <app-card [card]="card$ | async" [showInDetail]="true"></app-card>
     </div>
   </div>
 </section>

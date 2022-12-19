@@ -27,4 +27,8 @@ export class BlogsComponent implements OnInit {
   ngOnInit(): void {
     this.store.dispatch(BlogsActions.loadBlogs())
   }
+
+  onSearch($event: any) {
+    
+  }
 }

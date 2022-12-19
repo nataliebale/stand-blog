@@ -17,9 +17,9 @@ import { BlogsEffects, blogsReducer } from "../../../core/store/blogs";
   ],
   imports: [
     CommonModule,
-    RouterModule,
     StoreModule.forFeature('blogs', blogsReducer),
-    EffectsModule.forFeature([ BlogsEffects ])
+    EffectsModule.forFeature([BlogsEffects]),
+    RouterModule
   ]
 })
 export class CardModule { }

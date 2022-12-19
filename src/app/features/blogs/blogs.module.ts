@@ -4,7 +4,7 @@ import { HttpClientModule } from "@angular/common/http";
 
 import { BlogsRoutingModule } from './blogs-routing.module';
 import { BlogsComponent } from './blogs.component';
-import { CardModule, ComponentsModule } from "../../libs/components";
+import { BlogsFiltersModule, CardModule, ComponentsModule } from "../../libs/components";
 import { BannerService, BlogsService } from "../../core/services";
 
 
@@ -18,6 +18,7 @@ import { BannerService, BlogsService } from "../../core/services";
     CardModule,
     BlogsRoutingModule,
     HttpClientModule,
+    BlogsFiltersModule
   ],
   providers: [
     BlogsService,
