@@ -8,7 +8,7 @@ import {
   IAppState,
   setPopularBlog,
   showInDetailAction
-} from "../../../core/store/blogs";
+} from "../../../core/store";
 
 @UntilDestroy()
 @Component({

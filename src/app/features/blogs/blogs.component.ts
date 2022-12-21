@@ -2,7 +2,7 @@ import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
 import { Store } from "@ngrx/store";
 
-import { getBlogs, getError, IBlogsState } from "../../core/store/blogs";
+import { getBlogs, getError, IBlogsState } from "../../core/store";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 import { IAd, IBanner, IBlog } from "../../libs/components";
 import { BannerService, BlogsService } from "../../core/services";
@@ -29,6 +29,6 @@ export class BlogsComponent implements OnInit {
   }
 
   onSearch($event: any) {
-    
+
   }
 }

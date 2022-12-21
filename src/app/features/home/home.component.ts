@@ -5,7 +5,7 @@ import { Observable } from "rxjs";
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 import { BannerService, BlogsService } from "../../core/services";
 import { IAd, IBlog } from "../../libs/components";
-import { getBlogs, getPopularBlogs, IBlogsState } from "../../core/store/blogs";
+import { getBlogs, getPopularBlogs, IBlogsState } from "../../core/store";
 
 @Component({
   selector: 'app-home',
