@@ -1,7 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { AdsBlockComponent } from "./ads-block";
 import { BannerComponent } from "./banner";
+import { SocialsComponent } from "./socials";
 
 const components = [
   AdsBlockComponent,
@@ -11,10 +13,12 @@ const components = [
 @NgModule({
   declarations: [
     ...components,
+    SocialsComponent,
   ],
   exports: [
     AdsBlockComponent,
-    BannerComponent
+    BannerComponent,
+    SocialsComponent
   ],
   imports: [
     CommonModule

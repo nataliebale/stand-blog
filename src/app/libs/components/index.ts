@@ -5,4 +5,5 @@ export * from './filters';
 export * from './form';
 export * from './swiper';
 export * from './blogs-filters';
+export * from './socials';
 export * from './components.module';
