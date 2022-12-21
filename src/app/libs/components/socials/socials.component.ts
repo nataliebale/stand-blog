@@ -5,11 +5,7 @@ import { Component, OnInit } from '@angular/core';
   templateUrl: './socials.component.html',
   styleUrls: ['./socials.component.scss']
 })
-export class SocialsComponent implements OnInit {
+export class SocialsComponent {
 
   constructor() { }
-
-  ngOnInit(): void {
-  }
-
 }
