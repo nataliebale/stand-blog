@@ -18,4 +18,9 @@ describe('TestService', () => {
   it('should have no messages to start', function () {
     expect(service.arr.length).toBe(0);
   });
+
+  it('should add a message when add is called', function () {
+    service.add('message1');
+    expect(service.arr.length).toBe(1);
+  });
 });
