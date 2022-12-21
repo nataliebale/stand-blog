@@ -23,4 +23,11 @@ describe('TestService', () => {
     service.add('message1');
     expect(service.arr.length).toBe(1);
   });
+
+  it('should remove all messages when clear is called', function () {
+    service.add('message1');
+    service.clear();
+
+    expect(service.arr.length).toBe(0)
+  });
 });
