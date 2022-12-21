@@ -14,10 +14,9 @@ import { BannerService, BlogsService } from "../../../core/services";
 export class BlogDetailsComponent implements OnInit {
   banner$: Observable<IBanner> = this.bannerService.getBanner$();
   card$: Observable<IBlog>;
+  ad$: Observable<IAd> = this.bannerService.getAd$();
 
   itemId: number;
-
-  ad$: Observable<IAd> = this.bannerService.getAd$();
 
   constructor(private route: ActivatedRoute,
               private bannerService: BannerService,
