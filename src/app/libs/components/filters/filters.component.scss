@@ -25,7 +25,8 @@
         font-weight: 900;
       }
 
-      &:hover{
+      &:hover,
+      &.active{
         color: variables.$color-orange;
       }
     }
@@ -34,10 +35,13 @@
 
 
 .filter-tags{
+
   button{
     margin: 0 10px 10px 0;
     display: inline-block;
-    &:hover{
+
+    &:hover,
+    &.active{
       background: variables.$color-orange;
       color: variables.$color-white;
     }

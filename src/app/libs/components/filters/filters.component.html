@@ -14,9 +14,9 @@
 
   <ul class="categories">
     <li *ngFor="let category of categories"
-        class="categories_item"
-        [class.active]="isActive(FilterTypes.CATEGORY, category.id)">
-      <a (click)="onCategorySelect(category.id)">
+        class="categories_item">
+      <a (click)="onCategorySelect(category.id)"
+         [class.active]="isActive(FilterTypes.CATEGORY, category.id)">
         {{ category?.name }}
       </a>
     </li>

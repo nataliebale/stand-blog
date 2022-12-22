@@ -34,7 +34,8 @@
     border-left: 1px solid variables.$color-orange;
   }
 
-  &:hover{
+  &:hover,
+  &.active{
     color: variables.$color-white;
     background-color: variables.$color-orange;
 
@@ -76,7 +77,8 @@
     background-color: variables.$color-orange;
   }
 
-  &:hover{
+  &:hover,
+  &.active{
     color: variables.$color-white;
     background-color: variables.$color-orange;
 
