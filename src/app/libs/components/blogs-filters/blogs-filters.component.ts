@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { map, Observable, tap } from "rxjs";
+import { map, Observable } from "rxjs";
 import { ICategory, ITag } from "../filters";
 import { CategoriesService, TagsService } from "../../../core/services";
 
