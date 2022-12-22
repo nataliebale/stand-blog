@@ -31,7 +31,7 @@ export class FiltersComponent {
   }
 
   onCategorySelect(id: number) {
-    let ind = this.searchResultItem.categoryIds?.indexOf(id);
+    const ind = this.searchResultItem.categoryIds?.indexOf(id);
     ind === -1
       ? this.searchResultItem.categoryIds?.push(id)
       : this.searchResultItem.categoryIds?.splice(ind, 1);
@@ -39,7 +39,7 @@ export class FiltersComponent {
   }
 
   onTagSelect(id: number) {
-    let ind = this.searchResultItem.tagIds?.indexOf(id);
+    const ind = this.searchResultItem.tagIds?.indexOf(id);
     ind === -1
       ? this.searchResultItem.tagIds?.push(id)
       : this.searchResultItem.tagIds?.splice(ind, 1);
