@@ -1,7 +1,8 @@
-import { ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
+import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITag } from "./entity/tag.interface";
 import { ICategory } from "./entity/category.interface";
 import { IFilterSearch } from "./entity/filter-search.interface";
+import { FilterTypes } from "./entity/filter.types";
 
 @Component({
   selector: 'app-filters',
@@ -13,6 +14,8 @@ export class FiltersComponent {
   @Input() tags: ITag[];
   @Input() categories: ICategory[];
   @Output() searchEmit: EventEmitter<IFilterSearch> = new EventEmitter<IFilterSearch>();
+
+  FilterTypes = FilterTypes;
 
   searchResultItem: IFilterSearch = {
     search: '',
@@ -43,7 +46,10 @@ export class FiltersComponent {
     this.searchEmit.emit(this.searchResultItem);
   }
 
-  isActive(categoryOrTag: string, id: number) {
-    if()
+  isActive(type: FilterTypes, id: number) {
+    if(type === FilterTypes.CATEGORY) {
+      return this.searchResultItem.categoryIds?.indexOf(id) !== -1;
+    }
+    return this.searchResultItem.tagIds?.indexOf(id) !== -1;
   }
 }
