@@ -1,8 +1,6 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITag } from "./entity/tag.interface";
 import { ICategory } from "./entity/category.interface";
-import { IFilterSearch } from "./entity/filter-search.interface";
-import { FilterTypes } from "./entity/filter.types";
 
 @Component({
   selector: 'app-filters',
@@ -13,43 +11,23 @@ import { FilterTypes } from "./entity/filter.types";
 export class FiltersComponent {
   @Input() tags: ITag[];
   @Input() categories: ICategory[];
-  @Output() searchEmit: EventEmitter<IFilterSearch> = new EventEmitter<IFilterSearch>();
 
-  FilterTypes = FilterTypes;
-
-  searchResultItem: IFilterSearch = {
-    search: '',
-    categoryIds: [],
-    tagIds: []
-  }
+  @Output() searchByName: EventEmitter<string> = new EventEmitter<string>();
+  @Output() onSearchByCategoryId: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onSearchByTagId: EventEmitter<number> = new EventEmitter<number>();
 
   constructor() { }
 
-  onKeyUp(value: string): void {
-    this.searchResultItem.search = value;
-    this.searchEmit.emit(this.searchResultItem);
+  onSearchByName(value: string): void {
+    console.log(111111111, value);
+    this.searchByName.emit(value);
   }
 
   onCategorySelect(id: number) {
-    const ind = this.searchResultItem.categoryIds?.indexOf(id);
-    ind === -1
-      ? this.searchResultItem.categoryIds?.push(id)
-      : this.searchResultItem.categoryIds?.splice(ind, 1);
-    this.searchEmit.emit(this.searchResultItem);
+    this.onSearchByCategoryId.emit(id);
   }
 
   onTagSelect(id: number) {
-    const ind = this.searchResultItem.tagIds?.indexOf(id);
-    ind === -1
-      ? this.searchResultItem.tagIds?.push(id)
-      : this.searchResultItem.tagIds?.splice(ind, 1);
-    this.searchEmit.emit(this.searchResultItem);
-  }
-
-  isActive(type: FilterTypes, id: number) {
-    if(type === FilterTypes.CATEGORY) {
-      return this.searchResultItem.categoryIds?.indexOf(id) !== -1;
-    }
-    return this.searchResultItem.tagIds?.indexOf(id) !== -1;
+    this.onSearchByTagId.emit(id);
   }
 }

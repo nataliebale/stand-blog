@@ -1,6 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from "rxjs";
-import { ICategory, IFilterSearch, ITag } from "../filters";
+import { Component } from '@angular/core';
+import { map, Observable, tap } from "rxjs";
+import { ICategory, ITag } from "../filters";
 import { CategoriesService, TagsService } from "../../../core/services";
 
 @Component({
@@ -8,19 +8,28 @@ import { CategoriesService, TagsService } from "../../../core/services";
   templateUrl: './blogs-filters.component.html',
   styleUrls: ['./blogs-filters.component.scss']
 })
-export class BlogsFiltersComponent implements OnInit {
+export class BlogsFiltersComponent {
   categories$: Observable<ICategory[]> = this.categoriesService.getCategories$();
   tags$: Observable<ITag[]> = this.tagsService.getTags$();
 
   constructor(private tagsService: TagsService,
               private categoriesService: CategoriesService) { }
 
-  ngOnInit(): void {
+  onSearchByName(value: string) {
+    this.categories$.pipe(
+      map(data =>
+        data.filter(item =>
+          item.name.toLowerCase().indexOf(value) !== -1
+        )
+      ),
+    )
   }
 
-  onSearch(value: IFilterSearch): void {
-    console.log(value); // TODO
+  onSearchByCategoryId(id: number) {
+
   }
 
+  onSearchByTagId(id: number) {
 
+  }
 }

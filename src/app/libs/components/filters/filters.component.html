@@ -2,7 +2,7 @@
   <form>
     <div class="form-group">
       <input #searchInput type="text"
-             (keyup)="onKeyUp(searchInput.value)"
+             (keyup)="onSearchByName(searchInput.value)"
              class="form-control"
              placeholder="TYPE TO SEARCH">
     </div>
@@ -15,8 +15,8 @@
   <ul class="categories">
     <li *ngFor="let category of categories"
         class="categories_item">
-      <a (click)="onCategorySelect(category.id)"
-         [class.active]="isActive(FilterTypes.CATEGORY, category.id)">
+      <a (click)="onCategorySelect(category.id); category.active = !category.active"
+         [class.active]="category.active">
         {{ category?.name }}
       </a>
     </li>
@@ -29,8 +29,8 @@
   <div class="filter-tags mt-30">
     <button *ngFor="let tag of tags"
             class="btn btn-white"
-            (click)="onTagSelect(tag.id)"
-            [class.active]="isActive(FilterTypes.TAG, tag.id)">
+            (click)="onTagSelect(tag.id); tag.active = !tag.active"
+            [class.active]="tag.active">
       <p>
         {{ tag.name }}
       </p>
