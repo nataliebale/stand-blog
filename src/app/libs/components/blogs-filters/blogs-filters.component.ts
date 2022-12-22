@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Observable } from "rxjs";
-import { ICategory, ITag } from "../filters";
+import { ICategory, IFilterSearch, ITag } from "../filters";
 import { CategoriesService, TagsService } from "../../../core/services";
 
 @Component({
@@ -18,7 +18,7 @@ export class BlogsFiltersComponent implements OnInit {
   ngOnInit(): void {
   }
 
-  onSearch(value: string): void {
+  onSearch(value: IFilterSearch): void {
     console.log(value); // TODO
   }
 

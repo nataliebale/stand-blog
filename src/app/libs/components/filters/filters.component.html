@@ -14,8 +14,8 @@
 
   <ul class="categories">
     <li *ngFor="let category of categories"
-      class="categories_item">
-      <a>
+      class="categories_item" [class.active]="isActive('category', category.id)">
+      <a (click)="onCategorySelect(category.id)">
         {{ category?.name }}
       </a>
     </li>
@@ -27,7 +27,8 @@
 
   <div class="filter-tags mt-30">
     <button *ngFor="let tag of tags"
-            class="btn btn-white">
+            class="btn btn-white"
+            (click)="onTagSelect(tag.id)">
       <p>
         {{ tag.name }}
       </p>
