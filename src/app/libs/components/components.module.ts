@@ -7,13 +7,13 @@ import { SocialsComponent } from "./socials";
 
 const components = [
   AdsBlockComponent,
-  BannerComponent
+  BannerComponent,
+  SocialsComponent,
 ]
 
 @NgModule({
   declarations: [
     ...components,
-    SocialsComponent,
   ],
   exports: [
     AdsBlockComponent,
