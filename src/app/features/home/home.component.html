@@ -19,7 +19,7 @@
       </button>
     </div>
     <div class="col-3">
-      <app-blogs-filters></app-blogs-filters>
+      <app-blogs-filters (onFilterChange)="onFilterChange($event)"></app-blogs-filters>
     </div>
   </div>
 </section>

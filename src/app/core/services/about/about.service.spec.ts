@@ -71,7 +71,7 @@ describe('AboutService', () => {
 
       // test method type to be GET
       expect(req.request.method).toBe('GET');
-      
+
       httpTestingController.verify();
     })
   })

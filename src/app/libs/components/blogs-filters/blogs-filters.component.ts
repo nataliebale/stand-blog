@@ -1,28 +1,26 @@
-import { Component } from '@angular/core';
-import { map, Observable } from "rxjs";
+import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
+import { map, Observable, tap } from "rxjs";
 import { ICategory, ITag } from "../filters";
 import { CategoriesService, TagsService } from "../../../core/services";
 
 @Component({
   selector: 'app-blogs-filters',
   templateUrl: './blogs-filters.component.html',
-  styleUrls: ['./blogs-filters.component.scss']
+  styleUrls: ['./blogs-filters.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogsFiltersComponent {
+  @Output() onFiltersChange: EventEmitter<any> = new EventEmitter<any>();
+
   categories$: Observable<ICategory[]> = this.categoriesService.getCategories$();
   tags$: Observable<ITag[]> = this.tagsService.getTags$();
+  filters:
 
   constructor(private tagsService: TagsService,
               private categoriesService: CategoriesService) { }
 
   onSearchByName(value: string) {
-    this.categories$.pipe(
-      map(data =>
-        data.filter(item =>
-          item.name.toLowerCase().indexOf(value) !== -1
-        )
-      ),
-    )
+
   }
 
   onSearchByCategoryId(id: number) {

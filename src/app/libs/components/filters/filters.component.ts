@@ -1,6 +1,7 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Input, Output } from '@angular/core';
 import { ITag } from "./entity/tag.interface";
 import { ICategory } from "./entity/category.interface";
+import { IFilterSearch } from "./entity/filter-search.interface";
 
 @Component({
   selector: 'app-filters',
@@ -12,22 +13,35 @@ export class FiltersComponent {
   @Input() tags: ITag[];
   @Input() categories: ICategory[];
 
-  @Output() searchByName: EventEmitter<string> = new EventEmitter<string>();
-  @Output() onSearchByCategoryId: EventEmitter<number> = new EventEmitter<number>();
-  @Output() onSearchByTagId: EventEmitter<number> = new EventEmitter<number>();
+  @Output() onEmitFilters: EventEmitter<IFilterSearch> = new EventEmitter<IFilterSearch>();
 
-  constructor() { }
+  filters: IFilterSearch = {
+    search: '',
+    categoryIds: [],
+    tagIds: []
+  }
 
   onSearchByName(value: string): void {
-    console.log(111111111, value);
-    this.searchByName.emit(value);
+    this.filters.search = value;
+    this.emitFilters();
   }
 
   onCategorySelect(id: number) {
-    this.onSearchByCategoryId.emit(id);
+    // @ts-ignore
+    const index = this.filters.categoryIds.indexOf(id);
+    index === -1 ? this.filters.categoryIds?.push(id) : this.filters.categoryIds?.splice(index, 1);
+    this.emitFilters();
   }
 
   onTagSelect(id: number) {
-    this.onSearchByTagId.emit(id);
+    // @ts-ignore
+    const index = this.filters.tagIds.indexOf(id);
+    index === -1 ? this.filters.tagIds?.push(id) : this.filters.tagIds?.splice(index, 1);
+    this.emitFilters();
   }
+
+  emitFilters(): void{
+    this.onEmitFilters.emit(this.filters);
+  }
+
 }
