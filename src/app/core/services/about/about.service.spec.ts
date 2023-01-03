@@ -50,8 +50,30 @@ describe('AboutService', () => {
 
   describe('getBanner$', () => {
     it('should call getBlogs with the right URL', () => {
-        service.getBlogById$(2);
-        // httpTestingController.
+      // call getHero()
+      service.getBlogById$(2).subscribe();
+
+      // test that URL was correct
+      const req = httpTestingController.expectOne('api/data.json');
+
+      req.flush({
+        id: 4,
+        image: './assets/test.jpg',
+        tag: 'testTag2',
+        title: 'testTitle2',
+        role: 'testRole2',
+        date: 'testDate2',
+        numOfComments: 4,
+        description: 'testDesc2',
+        showFullDescription: false,
+        isPopular: true
+      });
+
+      // test method type to be GET
+      expect(req.request.method).toBe('GET');
+
+      
+      httpTestingController.verify();
     })
   })
 })
