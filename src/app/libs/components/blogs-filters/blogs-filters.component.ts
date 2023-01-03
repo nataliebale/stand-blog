@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component, EventEmitter, Output } from '@angular/core';
-import { map, Observable, tap } from "rxjs";
+import { Observable } from "rxjs";
 import { ICategory, IFilterSearch, ITag } from "../filters";
 import { CategoriesService, TagsService } from "../../../core/services";
 
