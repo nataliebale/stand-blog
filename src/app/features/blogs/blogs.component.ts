@@ -28,7 +28,7 @@ export class BlogsComponent implements OnInit {
     this.store.dispatch(BlogsActions.loadBlogs())
   }
 
-  onSearch($event: any) {
-
+  onFiltersChange(filters: any){
+    console.log('blogs filters => ',filters);
   }
 }

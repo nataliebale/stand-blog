@@ -1,6 +1,4 @@
-<app-filters (searchByName)="onSearchByName($event)"
-             (onSearchByCategoryId)="onSearchByCategoryId($event)"
-             (onSearchByTagId)="onSearchByTagId($event)"
+<app-filters (onEmitFilters)="onFiltersChange.emit($event)"
              [categories]="categories$ | async"
              [tags]="tags$ | async"
 ></app-filters>

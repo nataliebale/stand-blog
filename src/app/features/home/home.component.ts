@@ -27,8 +27,8 @@ export class HomeComponent implements OnInit {
     this.store.dispatch(BlogsActions.loadPopularBlogs());
   }
 
-  onFilterChange(filters: any){
-    console.log('filters => ',filters);
+  onFiltersChange(filters: any){
+    console.log('home filters => ',filters);
   }
 
 }
