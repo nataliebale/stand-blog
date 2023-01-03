@@ -51,7 +51,7 @@ describe('AboutService', () => {
   describe('getBanner$', () => {
     it('should call getBlogs with the right URL', () => {
         service.getBlogById$(2);
-        httpTestingController.
+        // httpTestingController.
     })
   })
 })
