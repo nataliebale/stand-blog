@@ -24,6 +24,10 @@ describe('BlogsService', () => {
     it('should call getBlogById$ with the correct URL', () => {
 
     })
+
+    it('should call getBlogById$ with the correct parameter', () => {
+      
+    })
   })
 })
 

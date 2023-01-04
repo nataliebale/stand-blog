@@ -1,6 +1,6 @@
 import { ChangeDetectionStrategy, Component, OnInit } from '@angular/core';
 import { Store } from "@ngrx/store";
-import { Observable } from "rxjs";
+import { map, Observable } from "rxjs";
 
 import * as BlogsActions from "../../core/store/blogs/actions/blogs.action";
 import { BannerService, BlogsService } from "../../core/services";
@@ -29,6 +29,11 @@ export class HomeComponent implements OnInit {
 
   onFiltersChange(filters: any){
     console.log('home filters => ',filters);
+    this.blogs$.pipe(
+      map(data => {
+
+      })
+    )
   }
 
 }
