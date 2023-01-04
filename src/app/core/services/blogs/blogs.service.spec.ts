@@ -22,11 +22,11 @@ describe('BlogsService', () => {
 
   describe('getBlogById$', () => {
     it('should call getBlogById$ with the correct URL', () => {
-
+      service.getBlogById$(1)
     })
 
     it('should call getBlogById$ with the correct parameter', () => {
-      
+
     })
   })
 })
