@@ -53,7 +53,6 @@ describe('AboutComponent', () => {
     fixture.detectChanges();
 
     const bannerComponentDEs = fixture.debugElement.queryAll(By.directive(BannerComponent))
-    console.log(bannerComponentDEs);
     expect(bannerComponentDEs[0].componentInstance.banner.title).toEqual('test');
   });
 })

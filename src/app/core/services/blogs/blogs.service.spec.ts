@@ -22,7 +22,24 @@ describe('BlogsService', () => {
 
   describe('getBlogById$', () => {
     it('should call getBlogById$ with the correct URL', () => {
-      service.getBlogById$(1)
+      service.getBlogById$(1).subscribe();
+
+      const req = httpTestingController.expectOne('api/data.json');
+
+      req.flush({
+        id: 4,
+        image: './assets/test.jpg',
+        tag: 'testTag2',
+        title: 'testTitle2',
+        role: 'testRole2',
+        date: 'testDate2',
+        numOfComments: 4,
+        description: 'testDesc2',
+        showFullDescription: false,
+        isPopular: true
+      });
+
+      httpTestingController.verify();
     })
 
     it('should call getBlogById$ with the correct parameter', () => {
