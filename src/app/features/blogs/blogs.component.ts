@@ -17,7 +17,6 @@ export class BlogsComponent implements OnInit {
   banner$: Observable<IBanner> = this.bannerService.getBanner$();
   cards$: Observable<IBlog[] | null> = this.store.select(getBlogs);
   cardsError$: Observable<string> = this.store.select(getError);
-
   ad$: Observable<IAd> = this.bannerService.getAd$();
 
   constructor(private blogsService: BlogsService,
